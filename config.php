@@ -4,9 +4,9 @@ date_default_timezone_set('America/Lima');
 session_start();
 // Define: función o palabra reserva se utiliza para definir constantes. Tiene dos argumentos:
 //define('CONSTANTE', 'valor_constante)
-define('RUTA', 'http://localhost/projects/php/asistencia/');
+define('RUTA', 'http://localhost/attendance-control/');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_NAME', 'asistencia');
-define('DB_PASS', '');
+define('DB_PASS', '1234');
 ?>

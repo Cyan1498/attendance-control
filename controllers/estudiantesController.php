@@ -30,7 +30,7 @@ switch ($option) {
         if ($id_estudiante == '') {
             $consult = $estudiantes->comprobarCodigo($codigo, 0);
             if (empty($consult)) {
-                $result = $estudiantes->save($codigo, $nombre, $apellido, $telefono, $direccion, $carrera, $nivel);
+                $result = $estudiantes->save($codigo, $nombre, $apellido, $telefono, $direccion, $imagen, $carrera, $nivel);
                 if ($result) {
                     $res = array('tipo' => 'success', 'mensaje' => 'ESTUDIANTE REGISTRADO');
                 } else {
@@ -42,7 +42,7 @@ switch ($option) {
         } else {
             $consult = $estudiantes->comprobarCodigo($codigo, $id_estudiante);
             if (empty($consult)) {
-                $result = $estudiantes->update($codigo, $nombre, $apellido, $telefono, $direccion, $carrera, $nivel, $id_estudiante);
+                $result = $estudiantes->update($codigo, $nombre, $apellido, $telefono, $direccion, $imagen, $carrera, $nivel, $id_estudiante);
                 if ($result) {
                     $res = array('tipo' => 'success', 'mensaje' => 'ESTUDIANTE MODIFICADO');
                 } else {
