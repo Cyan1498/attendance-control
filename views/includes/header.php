@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/jquery-ui.min.css">
   
   <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/logo.png" />
+  <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/thales_logo.png" />
 </head>
 <body>
   <div class="container-scroller d-flex">
@@ -91,8 +91,8 @@
             <span class="mdi mdi-menu"></span>
           </button>
           <div class="navbar-brand-wrapper">
-            <a class="navbar-brand brand-logo" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/logo.png" width="60" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/logo.png" width="30" alt="logo"/></a>
+            <a class="navbar-brand brand-logo" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/thales_logo2.png" width="80" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/thales_logo2.png" width="30" alt="logo"/></a>
           </div>
           <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Bienvenido a sistema de control de asistencia</h4>
           <ul class="navbar-nav navbar-nav-right">

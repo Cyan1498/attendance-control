@@ -11985,12 +11985,12 @@ fieldset:disabled .btn {
 
 .btn-link {
   font-weight: 400;
-  color: #0d6efd;
+  color: #a3071c;
   text-decoration: underline;
 }
 
 .btn-link:hover {
-  color: #0a58ca;
+  color: #ca0a0a9c;
 }
 
 .btn-link:disabled, .btn-link.disabled {
@@ -12318,7 +12318,7 @@ fieldset:disabled .btn {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #0d6efd;
+  background-color: #a3071c;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -12363,7 +12363,7 @@ fieldset:disabled .btn {
 
 .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
   color: #fff;
-  background-color: #0d6efd;
+  background-color: #a3071c;
 }
 
 .dropdown-menu-dark .dropdown-item.disabled, .dropdown-menu-dark .dropdown-item:disabled {
@@ -21163,8 +21163,8 @@ code {
 }
 
 .badge-info, .preview-list .preview-item .preview-thumbnail .badge.badge-offline {
-  border: 1px solid #1cbccd;
-  color: #1cbccd;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .badge-warning, .preview-list .preview-item .preview-thumbnail .badge.badge-busy {
@@ -21670,7 +21670,7 @@ dl li {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 65px);
-  background: #223e9c;
+  background: #f83e37;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   padding: 0;
@@ -21790,7 +21790,7 @@ dl li {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background: #183188;
+  background: #952521;
   position: relative;
 }
 
@@ -21813,7 +21813,7 @@ dl li {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
-  background: #183188;
+  background: #952521;
   color: #ffffff;
 }
 
@@ -21849,11 +21849,11 @@ dl li {
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-  color: #93a8ff;
+  color: #f83e37;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {
-  color: #93a8ff;
+  color: #f83e37;
   background: transparent;
 }
 
@@ -22258,7 +22258,7 @@ dl li {
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    background: #223e9c;
+    background: #952521;
     padding: 0.5rem 1.4rem;
     left: 70px;
     position: absolute;
@@ -22274,13 +22274,13 @@ dl li {
     display: none;
   }
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
-    background: #223e9c;
+    background: #952521;
   }
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapse,
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
     display: block;
     padding: .5rem 0;
-    background: #223e9c;
+    background: #952521;
     border-radius: 0 0 5px 0;
     position: absolute;
     left: 70px;
