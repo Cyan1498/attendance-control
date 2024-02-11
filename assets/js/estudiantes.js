@@ -4,6 +4,7 @@ const telefono = document.querySelector('#telefono');
 const nombre = document.querySelector('#nombre');
 const apellido = document.querySelector('#apellido');
 const direccion = document.querySelector('#direccion');
+const imagen = document.querySelector('#imagen');
 const carrera = document.querySelector('#carrera');
 const nivel = document.querySelector('#nivel');
 const id_estudiante = document.querySelector('#id_estudiante');
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'codigo' },
       { data: 'nombres' },
       { data: 'telefono' },
-      { data: 'direccion' },      
+      { data: 'direccion' },    
+      // { data: 'imagen' },    
       { data: 'niveles' },
       { data: 'accion' }
     ],
@@ -36,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   frm.onsubmit = function (e) {
     e.preventDefault();
-    if (codigo.value == '' || telefono.value == '' || nombre.value == ''
-    || apellido.value == '' || direccion.value == '' || carrera.value == '' || nivel.value == '') {
+    if (codigo.value == '' || nombre.value == ''
+    || apellido.value == '' || carrera.value == '' || nivel.value == '') {
       message('error', 'TODO LOS CAMPOS CON * SON REQUERIDOS')
     } else {
       const frmData = new FormData(frm);
@@ -97,6 +99,7 @@ function editEst(id) {
       telefono.value = info.telefono;
       nombre.value = info.nombre;
       direccion.value = info.direccion;
+      // imagen.value = info.imagen
       carrera.value = info.id_carrera;
       nivel.value = info.id_nivel;
       id_estudiante.value = info.id;
@@ -109,7 +112,7 @@ function editEst(id) {
 }
 
 function cargarCarreras() {
-  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=carreras')
+  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=aulas')
     .then(function (response) {
       const info = response.data;
       let html = '<option value="">Seleccionar</option>';
@@ -124,7 +127,7 @@ function cargarCarreras() {
 }
 
 function cargarNiveles() {
-  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=niveles')
+  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=sedes')
     .then(function (response) {
       const info = response.data;
       let html = '<option value="">Seleccionar</option>';
