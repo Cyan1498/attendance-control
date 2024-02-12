@@ -4,7 +4,7 @@ const telefono = document.querySelector('#telefono');
 const nombre = document.querySelector('#nombre');
 const apellido = document.querySelector('#apellido');
 const direccion = document.querySelector('#direccion');
-const imagen = document.querySelector('#imagen');
+// const imagen = document.querySelector('#imagen');
 const carrera = document.querySelector('#carrera');
 const nivel = document.querySelector('#nivel');
 const id_estudiante = document.querySelector('#id_estudiante');
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'nombres' },
       { data: 'telefono' },
       { data: 'direccion' },    
-      // { data: 'imagen' },    
       { data: 'niveles' },
       { data: 'accion' }
     ],
@@ -99,9 +98,8 @@ function editEst(id) {
       telefono.value = info.telefono;
       nombre.value = info.nombre;
       direccion.value = info.direccion;
-      // imagen.value = info.imagen
-      carrera.value = info.id_carrera;
-      nivel.value = info.id_nivel;
+      carrera.value = info.id_aula;
+      nivel.value = info.id_sede;
       id_estudiante.value = info.id;
       btn_save.innerHTML = 'Actualizar';
       codigo.focus();

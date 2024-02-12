@@ -33,12 +33,6 @@
                         <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
                     </div>
                 </div>
-                <!-- <div class="col-md-4">
-                    <div class="form-group mb-3">
-                        <label for="imagen">Foto <span class="text-danger">*</span></label>
-                        <input type="file" class="form-control" id="imagen" name="imagen">
-                    </div>
-                </div> -->
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="carrera">Carrera <span class="text-danger">*</span></label>
@@ -68,13 +62,12 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Carrera</th>
+                        <th scope="col">Aula</th>
                         <th scope="col">Código</th>
                         <th scope="col">Nombres</th>
-                        <!-- <th scope="col">Foto</th> -->
                         <th scope="col">Telefono</th>
-                        <th scope="col">Dirección</th>                        
-                        <th scope="col">Nivel</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Sede</th>
                         <th></th>
                     </tr>
                 </thead>
