@@ -25,8 +25,19 @@
     <div class="wrapper">
         <form class="login animate__animated animate__rotateInUpLeft" id="frmLogin" autocomplete="off">
             <p class="title">Login</p>
-            <input type="text" class="animate__animated animate__slideInDown" placeholder="E-mail" id="email" autofocus />
-            <input type="password" class="animate__animated animate__slideInUp" id="password" placeholder="Password" />
+            <input 
+                type="text" 
+                class="animate__animated animate__slideInDown" 
+                placeholder="E-mail" 
+                id="email" 
+                autofocus 
+                value="admin2024@gmail.com"/>
+            <input 
+                type="password" 
+                class="animate__animated animate__slideInUp" 
+                id="password" 
+                placeholder="Password" 
+                value="123456"/>
             <button type="submit">
                 <i class="spinner"></i>
                 <span class="state">Login</span>
