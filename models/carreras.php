@@ -10,14 +10,14 @@ class CarrerasModel{
 
     public function getCarreras()
     {
-        $consult = $this->pdo->prepare("SELECT * FROM carreras WHERE estado = 1");
+        $consult = $this->pdo->prepare("SELECT * FROM aulas WHERE estado = 1");
         $consult->execute();
         return $consult->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getCarrera($id)
     {
-        $consult = $this->pdo->prepare("SELECT * FROM carreras WHERE id = ?");
+        $consult = $this->pdo->prepare("SELECT * FROM aulas WHERE id = ?");
         $consult->execute([$id]);
         return $consult->fetch(PDO::FETCH_ASSOC);
     }
@@ -25,10 +25,10 @@ class CarrerasModel{
     public function comprobarNombre($nombre, $accion)
     {
         if ($accion == 0) {
-            $consult = $this->pdo->prepare("SELECT * FROM carreras WHERE nombre = ?");
+            $consult = $this->pdo->prepare("SELECT * FROM aulas WHERE nombre = ?");
             $consult->execute([$nombre]);
         } else {
-            $consult = $this->pdo->prepare("SELECT * FROM carreras WHERE nombre = ? AND id != ?");
+            $consult = $this->pdo->prepare("SELECT * FROM aulas WHERE nombre = ? AND id != ?");
             $consult->execute([$nombre, $accion]);
         }
         return $consult->fetch(PDO::FETCH_ASSOC);
@@ -36,19 +36,19 @@ class CarrerasModel{
 
     public function save($nombre)
     {
-        $consult = $this->pdo->prepare("INSERT INTO carreras (nombre) VALUES (?)");
+        $consult = $this->pdo->prepare("INSERT INTO aulas (nombre) VALUES (?)");
         return $consult->execute([$nombre]);
     }
 
     public function delete($id)
     {
-        $consult = $this->pdo->prepare("UPDATE carreras SET estado = ? WHERE id = ?");
+        $consult = $this->pdo->prepare("UPDATE aulas SET estado = ? WHERE id = ?");
         return $consult->execute([0, $id]);
     }
 
     public function update($nombre, $id)
     {
-        $consult = $this->pdo->prepare("UPDATE carreras SET nombre=? WHERE id=?");
+        $consult = $this->pdo->prepare("UPDATE aulas SET nombre=? WHERE id=?");
         return $consult->execute([$nombre, $id]);
     }
 }

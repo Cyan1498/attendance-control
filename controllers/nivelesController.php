@@ -1,10 +1,10 @@
 <?php
-require_once '../models/niveles.php';
+require_once '../models/sedes.php';
 $option = (empty($_GET['option'])) ? '' : $_GET['option'];
-$niveles = new NivelesModel();
+$niveles = new SedesModel();
 switch ($option) {
     case 'listar':
-        $data = $niveles->getNiveles();
+        $data = $niveles->getSedes();
         for ($i = 0; $i < count($data); $i++) {
             $data[$i]['accion'] = '<div class="d-flex">
                 <a class="btn btn-danger btn-sm" onclick="eliminar(' . $data[$i]['id'] . ')"><i class="fas fa-eraser"></i></a>
@@ -55,7 +55,7 @@ switch ($option) {
         break;
     case 'edit':
         $id = $_GET['id'];
-        $data = $niveles->getNivel($id);
+        $data = $niveles->getSede($id);
         echo json_encode($data);
         break;
     default:

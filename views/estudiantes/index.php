@@ -62,12 +62,12 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Carrera</th>
+                        <th scope="col">Aula</th>
                         <th scope="col">Código</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Telefono</th>
-                        <th scope="col">Dirección</th>                        
-                        <th scope="col">Nivel</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Sede</th>
                         <th></th>
                     </tr>
                 </thead>

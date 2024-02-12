@@ -6,11 +6,11 @@ switch ($option) {
     case 'listar':
         $data = $estudiantes->getEstudiantes();
         for ($i = 0; $i < count($data); $i++) {
-            $colorNivel = substr(md5($data[$i]['id_nivel']), 0, 6);
-            $colorCarrera = substr(md5($data[$i]['id_carrera']), 0, 6);
+            $colorNivel = substr(md5($data[$i]['id_sede']), 0, 6);
+            $colorCarrera = substr(md5($data[$i]['id_aula']), 0, 6);
             $data[$i]['nombres'] = $data[$i]['nombre'] . ' ' . $data[$i]['apellido'];
-            $data[$i]['carreras'] = '<span class="badge mx-1" style="background: #'.$colorCarrera.';">'.$data[$i]['carrera'].'</span>';
-            $data[$i]['niveles'] = '<span class="badge mx-1" style="background: #'.$colorNivel.';">'.$data[$i]['nivel'].'</span>';
+            $data[$i]['carreras'] = '<span class="badge mx-1" style="background: #'.$colorCarrera.';">'.$data[$i]['aula'].'</span>';
+            $data[$i]['niveles'] = '<span class="badge mx-1" style="background: #'.$colorNivel.';">'.$data[$i]['sede'].'</span>';
             $data[$i]['accion'] = '<div class="d-flex">
                 <a class="btn btn-danger btn-sm" onclick="deleteEst(' . $data[$i]['id'] . ')"><i class="fas fa-eraser"></i></a>
                 <a class="btn btn-primary btn-sm" onclick="editEst(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></a>
