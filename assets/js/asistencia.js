@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'fecha' },
       { data: 'codigo' },
       { data: 'nombre' },
-      { data: 'carrera' },
-      { data: 'nivel' },
+      { data: 'aula' },
+      { data: 'sede' },
       { data: 'ingreso' },
       { data: 'salida' },
       { data: 'accion' }
