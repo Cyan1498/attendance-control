@@ -8,5 +8,5 @@ define('RUTA', 'http://assistancecontrol.test/');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_NAME', 'asistencia');
-define('DB_PASS', '1234');
+define('DB_PASS', '');
 ?>

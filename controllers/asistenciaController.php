@@ -80,8 +80,8 @@ switch ($option) {
         foreach ($data as $row) {
             $result['id'] = $row['id'];
             $result['label'] = $row['nombre'];
-            $result['carrera'] = $row['id_carrera'];
-            $result['nivel'] = $row['id_nivel'];
+            $result['carrera'] = $row['id_aula'];
+            $result['nivel'] = $row['id_sede'];
             array_push($array, $result);
         }
         echo json_encode($array);

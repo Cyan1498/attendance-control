@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function cargarCarreras() {
-  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=carreras')
+  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=aulas')
     .then(function (response) {
       const info = response.data;
       let html = '<option value="">Seleccionar</option>';
@@ -57,7 +57,7 @@ function cargarCarreras() {
 }
 
 function cargarNiveles() {
-  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=niveles')
+  axios.get(ruta + 'controllers/estudiantesController.php?option=datos&item=sedes')
     .then(function (response) {
       const info = response.data;
       let html = '<option value="">Seleccionar</option>';

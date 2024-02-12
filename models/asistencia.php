@@ -10,15 +10,15 @@ class AsistenciaModel{
 
     public function getAsistencias()
     {
-        $consult = $this->pdo->prepare("SELECT a.*, e.codigo, CONCAT(e.nombre, ' ', e.apellido) AS estudiante, c.nombre AS carrera, n.nombre AS nivel FROM asistencias a INNER JOIN estudiantes e ON a.id_estudiante = e.id INNER JOIN carreras c ON e.id_carrera = c.id INNER JOIN niveles n ON e.id_nivel = n.id");
+        $consult = $this->pdo->prepare("SELECT a.*, e.codigo, CONCAT(e.nombre, ' ', e.apellido) AS estudiante, c.nombre AS aula, n.nombre AS sede FROM asistencias a INNER JOIN estudiantes e ON a.id_estudiante = e.id INNER JOIN aulas c ON e.id_aula = c.id INNER JOIN sedes n ON e.id_sede = n.id");
         $consult->execute();
         return $consult->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getFiltro($carrera, $nivel)
+    public function getFiltro($aula, $sede)
     {
-        $consult = $this->pdo->prepare("SELECT a.*, CONCAT(e.nombre, ' ', e.apellido) AS estudiante FROM asistencias a INNER JOIN estudiantes e ON a.id_estudiante = e.id INNER JOIN carreras c ON e.id_carrera = c.id INNER JOIN niveles n ON e.id_nivel = n.id WHERE c.id = ? AND n.id = ?");
-        $consult->execute([$carrera, $nivel]);
+        $consult = $this->pdo->prepare("SELECT a.*, CONCAT(e.nombre, ' ', e.apellido) AS estudiante FROM asistencias a INNER JOIN estudiantes e ON a.id_estudiante = e.id INNER JOIN aulas c ON e.id_aula = c.id INNER JOIN sedes n ON e.id_sede = n.id WHERE c.id = ? AND n.id = ?");
+        $consult->execute([$aula, $sede]);
         return $consult->fetchAll(PDO::FETCH_ASSOC);
     }
 
