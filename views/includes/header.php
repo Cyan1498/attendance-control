@@ -24,7 +24,7 @@
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   
   <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/thales_logo.png" />
+  <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/thales02.png" />
 </head>
 <body>
   <div class="container-scroller d-flex">
@@ -118,7 +118,7 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                <img src="<?php echo RUTA . 'assets/'; ?>images/avatar.png" alt="profile"/>
+                <img src="<?php echo RUTA . 'assets/'; ?>images/user.png" alt="profile"/>
                 <span class="nav-profile-name"><?php echo $_SESSION['nombre']; ?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
