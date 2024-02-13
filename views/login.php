@@ -43,7 +43,6 @@
                 <span class="state">Login</span>
             </button>
         </form>
-        <footer><a target="blank" href="https://sistemasfree.com/">Site</a></footer>
     </div>
 
     <script src="<?php echo RUTA . 'assets/'; ?>vendor/js/jquery.min.js"></script>

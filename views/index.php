@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <h1 class="fst-italic lh-1 mb-4">Sistema de registro de asistencia</h1>
-                <p class="mb-5">Entradas y salidas de las personas 2023</p>
+                <p class="mb-5">Entradas y salidas de las personas 2024</p>
                 <form id="contactForm" autocomplete="off">
                     <!-- Email address input-->
                     <div class="row input-group-newsletter">
