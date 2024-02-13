@@ -17,32 +17,52 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo RUTA . 'assets/'; ?>css/login.css" rel="stylesheet">
     <link href="<?php echo RUTA . 'assets/'; ?>css/snackbar.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/animate.min.css"/>
+    <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="bg-light p-3 p-md-4 p-xl-5">
 
-    <div class="wrapper">
-        <form class="login animate__animated animate__rotateInUpLeft" id="frmLogin" autocomplete="off">
-            <p class="title">Login</p>
-            <input 
-                type="text" 
-                class="animate__animated animate__slideInDown" 
-                placeholder="E-mail" 
-                id="email" 
-                autofocus 
-                value="admin2024@gmail.com"/>
-            <input 
-                type="password" 
-                class="animate__animated animate__slideInUp" 
-                id="password" 
-                placeholder="Password" 
-                value="123456"/>
-            <button type="submit">
-                <i class="spinner"></i>
-                <span class="state">Login</span>
-            </button>
-        </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xxl-11">
+                <div class="card border-light-subtle shadow-sm">
+                    <div class="row g-0">
+                        <div class="col-12 col-md-6">
+                            <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="../assets/images/asistencia.jpg" alt="Welcome back you've been missed!">
+                        </div>
+                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                            <div class="col-12 col-lg-11 col-xl-10">
+                                <div class="card-body p-3 p-md-4 p-xl-5">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="wrapper mb-5">
+                                                <form class="login animate__animated animate__rotateInUpLeft" id="frmLogin" autocomplete="off">
+                                                    <div class="mb-4">
+                                                        <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" src="../assets/images/thales_logo2.png" alt="BootstrapBrain Logo">
+                                                    </div>
+                                                    <input type="text" class="animate__animated animate__slideInDown" placeholder="E-mail" id="email" autofocus value="admin2024@gmail.com" />
+                                                    <input type="password" class="animate__animated animate__slideInUp" id="password" placeholder="Password" value="123456" />
+                                                    
+                                                    <div class="col-12">
+                                                        <div class="d-grid">
+                                                            <button class="btn btn-dark btn-lg" type="submit">
+                                                                <i class="spinner"></i>
+                                                                <span class="state">Ingresar</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="<?php echo RUTA . 'assets/'; ?>vendor/js/jquery.min.js"></script>

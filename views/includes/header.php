@@ -16,16 +16,17 @@
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/style.css">
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/full-calendar.css">
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>vendor/DataTables/datatables.min.css">
-  
+
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/snackbar.min.css">
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/jquery-ui.min.css">
   <!-- Para las imagenes -->
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/uploadImg.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  
+
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/thales02.png" />
 </head>
+
 <body>
   <div class="container-scroller d-flex">
     <!-- partial:./partials/_sidebar.html -->
@@ -67,7 +68,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?pagina=niveles">
-            <i class="mdi mdi-tag menu-icon"></i>
+            <i class="mdi mdi-home-modern menu-icon"></i>
             <span class="menu-title">Sedes</span>
           </a>
         </li>
@@ -78,10 +79,17 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?pagina=asistencia">
+          <a class="nav-link" data-bs-toggle="collapse" href="#ui-asistencia" aria-expanded="false" aria-controls="ui-basic" >
             <i class="mdi mdi-calendar menu-icon"></i>
             <span class="menu-title">Asistencia</span>
+            <i class="menu-arrow"></i>
           </a>
+          <div class="collapse" id="ui-asistencia">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="?pagina=registrar">Registrar asistencia</a></li>
+              <li class="nav-item"> <a class="nav-link" href="?pagina=asistencia">Ver Asistencias</a></li>
+            </ul>
+          </div>
         </li>
       </ul>
     </nav>
@@ -94,8 +102,8 @@
             <span class="mdi mdi-menu"></span>
           </button>
           <div class="navbar-brand-wrapper">
-            <a class="navbar-brand brand-logo" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/thales_logo2.png" width="80" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/thales_logo2.png" width="30" alt="logo"/></a>
+            <a class="navbar-brand brand-logo" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/thales_logo2.png" width="80" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="plantilla.php"><img src="<?php echo RUTA . 'assets/'; ?>images/thales_logo2.png" width="30" alt="logo" /></a>
           </div>
           <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Bienvenido a sistema de control de asistencia</h4>
           <ul class="navbar-nav navbar-nav-right">
@@ -118,7 +126,7 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                <img src="<?php echo RUTA . 'assets/'; ?>images/user.png" alt="profile"/>
+                <img src="<?php echo RUTA . 'assets/'; ?>images/user.png" alt="profile" />
                 <span class="nav-profile-name"><?php echo $_SESSION['nombre']; ?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -134,5 +142,3 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          
-        

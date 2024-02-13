@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="nivel">Nivel <span class="text-danger">*</span></label>
+                            <label for="nivel">Sede <span class="text-danger">*</span></label>
                             <select id="nivel" class="form-control" name="nivel">
                             </select>
                         </div>
@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="telefono">Telefono20</label>
+                                <label for="telefono">Telefono</label>
                                 <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="carrera">Carrera <span class="text-danger">*</span></label>
+                                <label for="carrera">Aula <span class="text-danger">*</span></label>
                                 <select id="carrera" class="form-control" name="carrera">
                                 </select>
                             </div>
@@ -83,13 +83,13 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Carrera</th>
+                        <th scope="col">Aula</th>
                         <th scope="col">Código</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Telefono</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Dirección</th>
-                        <th scope="col">Nivel</th>
+                        <th scope="col">Sede</th>
                         <th></th>
                     </tr>
                 </thead>

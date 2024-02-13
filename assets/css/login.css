@@ -1,5 +1,5 @@
 body {
-    background: rgba(4, 40, 68, 0.85) !important;
+    background: rgba(255, 255, 255, 0.658) !important;
     height: 100vh !important;
 }
 
@@ -23,6 +23,7 @@ body {
     justify-content: center;
     min-height: 100%;
     padding: 20px;
+    text-align: center;
 }
 
 .login {
@@ -33,7 +34,7 @@ body {
     background: #ffffff;
     position: relative;
     padding-bottom: 80px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 5px rgba(197, 10, 10, 0.459);
 }
 
 .login.loading button {
@@ -83,7 +84,7 @@ body {
 .login input:focus {
     outline: none;
     color: #444;
-    border-color: #2196F3;
+    border-color: #d6e9e3e5;
     border-left-width: 35px;
 }
 
@@ -95,7 +96,7 @@ body {
 
 .login a {
     font-size: 0.8em;
-    color: #2196F3;
+    color: #d6e9e3e5;
     text-decoration: none;
 }
 
@@ -112,7 +113,7 @@ body {
     width: 100%;
     height: 100%;
     padding: 10px 10px;
-    background: #2196F3;
+    background: #c0370de0;
     color: #fff;
     display: block;
     border: none;
@@ -148,7 +149,7 @@ body {
 }
 
 .login:not(.loading) button:hover {
-    box-shadow: 0px 1px 3px #2196F3;
+    box-shadow: 0px 1px 3px rgba(197, 10, 10, 0.459);
 }
 
 .login:not(.loading) button:focus {
@@ -161,7 +162,7 @@ footer {
     text-align: center;
     color: #ddd;
     font-weight: normal;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px -1px 0px rgba(180, 20, 20, 0.486);
     font-size: 0.8em;
 }
 
