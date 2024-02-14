@@ -58,4 +58,15 @@ class EstudiantesModel{
         $consult = $this->pdo->prepare("UPDATE estudiantes SET codigo=?, nombre=?, apellido=?, telefono=?, direccion=?, imagen=?, id_aula=?, id_sede=? WHERE id=?");
         return $consult->execute([$codigo, $nombre, $apellido, $telefono, $direccion, $img, $carrera,$nivel, $id]);
     }
+
+    //consultar por codigo
+    public function getEstudiantePorCodigo($codigo) {
+        $query = $this->pdo->prepare("SELECT e.*, c.nombre as aula, n.nombre as sede 
+                                      FROM estudiantes e 
+                                      INNER JOIN aulas c ON e.id_aula = c.id 
+                                      INNER JOIN sedes n ON e.id_sede = n.id 
+                                      WHERE e.codigo = ? AND e.estado = 1");
+        $query->execute([$codigo]);
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
 }

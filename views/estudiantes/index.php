@@ -11,10 +11,10 @@
                             <input type="file" id="file" accept="image/*" hidden>
                             <div class="img-area" data-img="">
                                 <i class='bx bxs-cloud-upload icon'></i>
-                                <h3>Upload Image</h3>
-                                <p>Image size must be less than <span>2MB</span></p>
+                                <h3>Cargar Imagen</h3>
+                                <p>La imagen debe ser menor que <span>2MB</span></p>
                             </div>
-                            <button class="select-image" type="button">Select Image</button>
+                            <button class="select-image" type="button">Seleccionar Imagen</button>
                         </div>
                     </div>
                 </div>
