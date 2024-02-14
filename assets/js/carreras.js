@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
       axios.post(ruta + 'controllers/carrerasController.php?option=save', frmData)
         .then(function (response) {
           const info = response.data;
+          console.log(info.mensaje);
           message(info.tipo, info.mensaje);
           if (info.tipo == 'success') {
             setTimeout(() => {
