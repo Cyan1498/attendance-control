@@ -21,24 +21,24 @@ switch ($option) {
             if (empty($consult)) {
                 $result = $carreras->save($nombre);
                 if ($result) {
-                    $res = array('tipo' => 'success', 'mensaje' => 'CARRERA REGISTRADO');
+                    $res = array('tipo' => 'success', 'mensaje' => 'AULA REGISTRADA');
                 } else {
                     $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL AGREGAR');
                 }
             } else {
-                $res = array('tipo' => 'error', 'mensaje' => 'EL CARRERA YA EXISTE');
+                $res = array('tipo' => 'error', 'mensaje' => 'EL AULA YA EXISTE');
             }
         } else {
             $consult = $carreras->comprobarNombre($nombre, $id_carrera);
             if (empty($consult)) {
                 $result = $carreras->update($nombre, $id_carrera);
                 if ($result) {
-                    $res = array('tipo' => 'success', 'mensaje' => 'CARRERA MODIFICADO');
+                    $res = array('tipo' => 'success', 'mensaje' => 'AULA MODIFICADA');
                 } else {
                     $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL MODIFICAR');
                 }
             } else {
-                $res = array('tipo' => 'error', 'mensaje' => 'EL CARRERA YA EXISTE');
+                $res = array('tipo' => 'error', 'mensaje' => 'EL AULA YA EXISTE');
             }
         }
         echo json_encode($res);
@@ -47,7 +47,7 @@ switch ($option) {
         $id = $_GET['id'];
         $data = $carreras->delete($id);
         if ($data) {
-            $res = array('tipo' => 'success', 'mensaje' => 'CARRERA ELIMINADO');
+            $res = array('tipo' => 'success', 'mensaje' => 'AULA ELIMINADA');
         } else {
             $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL ELIMINAR');
         }

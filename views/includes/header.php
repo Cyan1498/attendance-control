@@ -22,6 +22,7 @@
   <!-- Para las imagenes -->
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/uploadImg.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  
 
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/thales02.png" />
@@ -72,11 +73,24 @@
             <span class="menu-title">Sedes</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="?pagina=estudiantes">
             <i class="mdi mdi-chart-pie menu-icon"></i>
             <span class="menu-title">Estudiantes</span>
           </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#ui-student" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-palette menu-icon"></i>
+            <span class="menu-title">Estudiantes</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-student">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="?pagina=estudiantes">Gestionar Estudiante</a></li>
+              <li class="nav-item"> <a class="nav-link" href="?pagina=searchQr">Buscar por QR</a></li>
+            </ul>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#ui-asistencia" aria-expanded="false" aria-controls="ui-basic" >

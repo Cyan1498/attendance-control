@@ -21,24 +21,24 @@ switch ($option) {
             if (empty($consult)) {
                 $result = $niveles->save($nombre);
                 if ($result) {
-                    $res = array('tipo' => 'success', 'mensaje' => 'NIVEL REGISTRADO');
+                    $res = array('tipo' => 'success', 'mensaje' => 'SEDE REGISTRADA');
                 } else {
                     $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL AGREGAR');
                 }
             } else {
-                $res = array('tipo' => 'error', 'mensaje' => 'EL NIVEL YA EXISTE');
+                $res = array('tipo' => 'error', 'mensaje' => 'LA SEDE YA EXISTE');
             }
         } else {
             $consult = $niveles->comprobarNombre($nombre, $id_nivel);
             if (empty($consult)) {
                 $result = $niveles->update($nombre, $id_nivel);
                 if ($result) {
-                    $res = array('tipo' => 'success', 'mensaje' => 'NIVEL MODIFICADO');
+                    $res = array('tipo' => 'success', 'mensaje' => 'SEDE MODIFICADA');
                 } else {
                     $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL MODIFICAR');
                 }
             } else {
-                $res = array('tipo' => 'error', 'mensaje' => 'EL NIVEL YA EXISTE');
+                $res = array('tipo' => 'error', 'mensaje' => 'LA SEDE YA EXISTE');
             }
         }
         echo json_encode($res);
@@ -47,7 +47,7 @@ switch ($option) {
         $id = $_GET['id'];
         $data = $niveles->delete($id);
         if ($data) {
-            $res = array('tipo' => 'success', 'mensaje' => 'NIVEL ELIMINADO');
+            $res = array('tipo' => 'success', 'mensaje' => 'SEDE ELIMINADA');
         } else {
             $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL ELIMINAR');
         }

@@ -113,4 +113,10 @@ switch ($option) {
     default:
         # code...
         break;
+
+    case 'searchxQr':
+        $codigoEstudiante = $_GET['codigo'];
+        $estudiante = $estudiantes->getEstudiantePorCodigo($codigoEstudiante);
+        echo json_encode($estudiante);
+        break;
 }

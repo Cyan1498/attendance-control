@@ -30,7 +30,10 @@ if (isset($_GET['pagina'])) {
                 $plantilla->configuracion();
             } else if ($archivo == 'estudiantes') {
                 $plantilla->estudiantes();
-            } else if ($archivo == 'niveles') {
+            } else if ($archivo == 'searchQr') {
+                $plantilla->searchQr();
+            }
+            else if ($archivo == 'niveles') {
                 $plantilla->niveles();
             } else if ($archivo == 'carreras') {
                 $plantilla->carreras();
