@@ -24,7 +24,8 @@ class Plantilla{
         include_once 'views/estudiantes/carrera.php';
     }
     ###### pagina asistencia #####
-    public function registrar(){
+    public function registrar()
+    {
         include 'views/index.php';
     }
     public function asistencia()

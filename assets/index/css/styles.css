@@ -11297,7 +11297,7 @@ body {
 }
 body:before {
   content: "";
-  position: fixed;
+  position: cover;
   top: 0;
   left: 0;
   height: 100%;
@@ -11328,14 +11328,14 @@ img.bg-video {
 .masthead {
   position: relative;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .masthead:before {
   content: "";
-  position: absolute;
+  position: cover;
   top: 0;
   bottom: 0;
   right: 0;
@@ -11387,7 +11387,7 @@ img.bg-video {
   .masthead .masthead-content {
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 2rem;
+    padding-left: -20rem;
     padding-right: 9rem;
   }
   .masthead .masthead-content h1, .masthead .masthead-content .h1 {
@@ -11498,6 +11498,7 @@ label span:before {
   text-align: center;
   font-size: 1.5em;
   width: 100%;
+  display: inline-block;
 }
 
 .reloj{
@@ -11505,6 +11506,7 @@ label span:before {
   text-align: center;
   font-size: 40px;
   width: 100%;
+  display: inline-block;
 }
 
 .reloj .caja-segundos {
