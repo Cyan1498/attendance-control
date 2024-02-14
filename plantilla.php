@@ -34,6 +34,8 @@ if (isset($_GET['pagina'])) {
                 $plantilla->niveles();
             } else if ($archivo == 'carreras') {
                 $plantilla->carreras();
+            } else if ($archivo == 'registrar') {
+                $plantilla->registrar();
             } else if ($archivo == 'asistencia') {
                 $plantilla->asistencia();
             } else if ($archivo == 'ver' && !empty($_GET['nivel'])) {

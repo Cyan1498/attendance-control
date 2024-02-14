@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <img class="bg-video" src="<?php echo RUTA . 'assets/images/bg.jpg'; ?>" alt="">
+    <img class="bg-video" src="<?php echo RUTA . 'assets/images/bg.png'; ?>" alt="">
     <!-- Masthead-->
     <div class="masthead">
         <div class="masthead-content text-white">
