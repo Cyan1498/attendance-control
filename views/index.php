@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/snackbar.min.css">
-    <link href="<?php echo RUTA . 'assets/index/'; ?>css/styles.css" rel="stylesheet" />
-</head>
+<link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/snackbar.min.css">
+<link href="<?php echo RUTA . 'assets/index/'; ?>css/styles.css" rel="stylesheet" />
 
 <form id="contactForm" autocomplete="off">
     <div class="card">
@@ -31,18 +26,18 @@
                             </div>
                         </div>
                     </div>
-                    <h1 class="fst-italic lh-1 mb-4">Sistema de registro de asistencia</h1>
+                    <h1 class="fst-italic lh-1 mb-4">Registro de asistencia</h1>
                     <p class="mb-5">Entradas y salidas de estudiantes</p>
 
                     <!-- Email address input-->
                     <div class="row input-group-newsletter">
-                        <div class="col"><input class="form-control" id="codigo" name="codigo" type="text" placeholder="Ingrese código" /></div>
+                        <div class="col"><input class="form-control" id="codigo" name="codigo" type="text" placeholder="Ingrese código de estudiante" /></div>
                         <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">Registrar</button></div>
                     </div>
 
                     <!-- Social Icons-->
                     <div class="social-icons">
-                        <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
+                        <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center align-content-start h-50 mt-3 mt-lg-0">
                             <div>
                                 <label>
                                     <input type="radio" name="radio" value="entrada" checked />
@@ -66,16 +61,4 @@
 <!-- Core theme JS-->
 <script src="<?php echo RUTA . 'assets/'; ?>js/snackbar.min.js"></script>
 <script src="<?php echo RUTA . 'assets/'; ?>js/axios.min.js"></script>
-<script>
-    const ruta = '<?php echo RUTA; ?>';
-
-    function message(tipo, mensaje) {
-        Snackbar.show({
-            text: mensaje,
-            pos: 'top-right',
-            backgroundColor: tipo == 'success' ? '#079F00' : '#FF0303',
-            actionText: 'Cerrar'
-        });
-    }
-</script>
 <script src="<?php echo RUTA . 'assets/index/'; ?>js/scripts.js"></script>

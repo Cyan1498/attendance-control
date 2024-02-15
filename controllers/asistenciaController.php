@@ -79,7 +79,7 @@ switch ($option) {
         $data = $asistencias->buscarEstudiante($valor);
         foreach ($data as $row) {
             $result['id'] = $row['id'];
-            $result['label'] = $row['nombre'];
+            $result['label'] = $row['nombre'].' '.$row['apellido'];
             $result['carrera'] = $row['id_aula'];
             $result['nivel'] = $row['id_sede'];
             array_push($array, $result);
