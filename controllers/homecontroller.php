@@ -3,7 +3,7 @@ class Home{
     
     public function index()
     {
-        include 'views/index.php';
+        include 'views/login.php';
     }
 }
 
