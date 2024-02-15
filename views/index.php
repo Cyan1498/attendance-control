@@ -7,15 +7,15 @@
             <div class="masthead-content text-black">
                 <div class="container-fluid px-lg-0">
                     <div class="widget">
-                        <div class="fecha">
+                        <!-- <div class="fecha">
                             <p id="diaSemana" class="diaSemana"></p>
                             <p id="dia" class="dia"></p>
                             <p>de </p>
                             <p id="mes" class="mes"></p>
                             <p>del </p>
                             <p id="year" class="year"></p>
-                        </div>
-                        <div class="reloj">
+                        </div> -->
+                        <!-- <div class="reloj">
                             <p id="horas" class="horas"></p>
                             <p>:</p>
                             <p id="minutos" class="minutos"></p>
@@ -24,7 +24,7 @@
                                 <p id="segundos" class="segundos"></p>
                                 <p id="ampm" class="ampm"></p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <h1 class="fst-italic lh-1 mb-4">Registro de asistencia</h1>
                     <p class="mb-5">Entradas y salidas de estudiantes</p>
