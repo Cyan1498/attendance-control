@@ -37,17 +37,10 @@
                             <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos">
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="nivel">Sede <span class="text-danger">*</span></label>
-                            <select id="nivel" class="form-control" name="nivel">
-                            </select>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="row">
-                        <div class="col-md-12">
+                        <!-- <div class="col-md-12">
                             <div class="form-group">
                                 <label for="telefono">Telefono</label>
                                 <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
@@ -58,7 +51,14 @@
                                 <label for="direccion">Dirección</label>
                                 <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
                             </div>
+                        </div> -->
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="nivel">Sede <span class="text-danger">*</span></label>
+                            <select id="nivel" class="form-control" name="nivel">
+                            </select>
                         </div>
+                    </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="carrera">Aula <span class="text-danger">*</span></label>
@@ -80,16 +80,16 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-striped table-hover" style="width: 100%;" id="table_estudiantes">
-                <thead>
+                <thead style="background-color: hsl(227, 34%, 15%);">
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Aula</th>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nombres</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Dirección</th>
-                        <th scope="col">Sede</th>
+                        <th scope="col" style="color: #fff;">Id</th>
+                        <th scope="col" style="color: #fff;">Aula</th>
+                        <th scope="col" style="color: #fff;">Código</th>
+                        <th scope="col" style="color: #fff;">Nombres</th>
+                        <!-- <th scope="col" style="color: #fff;">Telefono</th> -->
+                        <th scope="col" style="color: #fff;">Foto</th>
+                        <!-- <th scope="col" style="color: #fff;">Dirección</th> -->
+                        <th scope="col" style="color: #fff;">Sede</th>
                         <th></th>
                     </tr>
                 </thead>
