@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/snackbar.min.css">
-<link href="<?php echo RUTA . 'assets/index/'; ?>css/styles.css" rel="stylesheet" />
-
+<link href="<?php echo RUTA . 'assets/index/'; ?>css/style2.css" rel="stylesheet" />
 <form id="contactForm" autocomplete="off">
     <div class="card">
         <div class="card-body">
@@ -36,15 +34,17 @@
                     </div>
 
                     <!-- Social Icons-->
-                    <div class="social-icons">
-                        <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center align-content-start h-50 mt-3 mt-lg-0">
-                            <div>
-                                <label>
-                                    <input type="radio" name="radio" value="entrada" checked />
+                    <div class="checkbox-wrapper-6">
+                        <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center align-content-start h-100 mt-3 mt-lg-10">
+                            <div class="wrapper">
+                                <input type="radio" name="radio" value="entrada" id="option-1" checked />
+                                <input type="radio" name="radio" value="salida" id="option-2" />
+                                <label for="option-1" class="option option-1">
+                                    <div class="dot"></div>
                                     <span>Entrada</span>
                                 </label>
-                                <label>
-                                    <input type="radio" name="radio" value="salida" />
+                                <label for="option-2" class="option option-2">
+                                    <div class="dot"></div>
                                     <span>Salida</span>
                                 </label>
                             </div>
