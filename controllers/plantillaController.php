@@ -19,7 +19,7 @@ class Plantilla{
     {
         include_once 'views/estudiantes/searchQR.php';
     }
-    public function niveles()
+    public function sedes()
     {
         include_once 'views/estudiantes/nivel.php';
     }

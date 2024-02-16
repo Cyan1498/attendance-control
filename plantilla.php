@@ -33,9 +33,9 @@ if (isset($_GET['pagina'])) {
             } else if ($archivo == 'searchQr') {
                 $plantilla->searchQr();
             }
-            else if ($archivo == 'niveles') {
-                $plantilla->niveles();
-            } else if ($archivo == 'carreras') {
+            else if ($archivo == 'sedes') {
+                $plantilla->sedes();
+            } else if ($archivo == 'canales') {
                 $plantilla->carreras();
             } else if ($archivo == 'registrarAsistencia') {
                 $plantilla->registrar();

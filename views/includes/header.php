@@ -63,13 +63,13 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?pagina=carreras">
+          <a class="nav-link" href="?pagina=canales">
             <i class="mdi mdi-view-headline menu-icon"></i>
-            <span class="menu-title">Aulas</span>
+            <span class="menu-title">Canales</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?pagina=niveles">
+          <a class="nav-link" href="?pagina=sedes">
             <i class="mdi mdi-home-modern menu-icon"></i>
             <span class="menu-title">Sedes</span>
           </a>

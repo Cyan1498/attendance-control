@@ -61,7 +61,7 @@
                     </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="carrera">Aula <span class="text-danger">*</span></label>
+                                <label for="carrera">Canal <span class="text-danger">*</span></label>
                                 <select id="carrera" class="form-control" name="carrera">
                                 </select>
                             </div>
@@ -83,7 +83,7 @@
                 <thead style="background-color: hsl(227, 34%, 15%);">
                     <tr>
                         <th scope="col" style="color: #fff;">Id</th>
-                        <th scope="col" style="color: #fff;">Aula</th>
+                        <th scope="col" style="color: #fff;">Canal</th>
                         <th scope="col" style="color: #fff;">Código</th>
                         <th scope="col" style="color: #fff;">Nombres</th>
                         <!-- <th scope="col" style="color: #fff;">Telefono</th> -->
