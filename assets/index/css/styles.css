@@ -11418,7 +11418,7 @@ img.bg-video {
 
 @media (min-width: 992px) {
   .social-icons {
-    position: absolute;
+    position: static;
     height: 200px;
     top: 0;
     right: 2.5rem;
