@@ -55,10 +55,3 @@
         </div>
     </div>
 </form>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="<?php echo RUTA . 'assets/'; ?>js/snackbar.min.js"></script>
-<script src="<?php echo RUTA . 'assets/'; ?>js/axios.min.js"></script>
-<script src="<?php echo RUTA . 'assets/index/'; ?>js/scripts.js"></script>

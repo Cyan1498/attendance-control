@@ -1,4 +1,3 @@
-
 const frm = document.querySelector('#frmCarrera');
 const nombre = document.querySelector('#nombre');
 const id_carrera = document.querySelector('#id_carrera');

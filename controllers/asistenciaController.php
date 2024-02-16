@@ -24,18 +24,18 @@ switch ($option) {
         }
         echo json_encode($data);
         break;
-        case 'verAsistencia':
-            $estudiante = $_GET['estudiante'];
-            $data = $asistencias->getFiltroAsistencia($estudiante);
-            for ($i = 0; $i < count($data); $i++) {
-                $data[$i]['start'] = $data[$i]['fecha'];
-                $data[$i]['color'] = '#00d082';
-                //$data[$i]['end'] = $data[$i]['salida'];
-                $data[$i]['title'] = $data[$i]['estudiante'];
-            }
-            echo json_encode($data);
-            break;
-    case 'registrar':
+    case 'verAsistencia':
+        $estudiante = $_GET['estudiante'];
+        $data = $asistencias->getFiltroAsistencia($estudiante);
+        for ($i = 0; $i < count($data); $i++) {
+            $data[$i]['start'] = $data[$i]['fecha'];
+            $data[$i]['color'] = '#00d082';
+            //$data[$i]['end'] = $data[$i]['salida'];
+            $data[$i]['title'] = $data[$i]['estudiante'];
+        }
+        echo json_encode($data);
+        break;
+    case 'registrarAsistencia':
         $codigo = $_POST['codigo'];
         $accion = $_POST['radio'];
         $consult = $asistencias->getEstudiante($codigo);
@@ -79,7 +79,7 @@ switch ($option) {
         $data = $asistencias->buscarEstudiante($valor);
         foreach ($data as $row) {
             $result['id'] = $row['id'];
-            $result['label'] = $row['nombre'].' '.$row['apellido'];
+            $result['label'] = $row['nombre'] . ' ' . $row['apellido'];
             $result['carrera'] = $row['id_aula'];
             $result['nivel'] = $row['id_sede'];
             array_push($array, $result);

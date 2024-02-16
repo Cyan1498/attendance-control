@@ -100,7 +100,7 @@
           </a>
           <div class="collapse" id="ui-asistencia">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="?pagina=registrar">Registrar asistencia</a></li>
+              <li class="nav-item"> <a class="nav-link" href="?pagina=registrarAsistencia">Registrar asistencia</a></li>
               <li class="nav-item"> <a class="nav-link" href="?pagina=asistencia">Ver Asistencias</a></li>
             </ul>
           </div>

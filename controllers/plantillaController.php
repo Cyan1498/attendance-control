@@ -30,7 +30,7 @@ class Plantilla{
     ###### pagina asistencia #####
     public function registrar()
     {
-        include 'views/index.php';
+        include_once 'views/asistencia/registrarAsistencia.php';
     }
     public function asistencia()
     {
