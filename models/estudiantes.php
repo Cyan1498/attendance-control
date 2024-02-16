@@ -41,10 +41,11 @@ class EstudiantesModel{
         return $consult->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function save($codigo, $nombre, $apellido, $telefono, $direccion,$img, $carrera,$nivel)
+    public function save($codigo, $nombre, $apellido,$img, $carrera,$nivel)
     {
-        $consult = $this->pdo->prepare("INSERT INTO estudiantes (codigo, nombre, apellido, telefono, direccion, imagen, id_aula, id_sede) VALUES (?,?,?,?,?,?,?,?)");
-        return $consult->execute([$codigo, $nombre, $apellido, $telefono, $direccion, $img, $carrera,$nivel]);
+        // $consult = $this->pdo->prepare("INSERT INTO estudiantes (codigo, nombre, apellido, telefono, direccion, imagen, id_aula, id_sede) VALUES (?,?,?,?,?,?,?,?)");
+        $consult = $this->pdo->prepare("INSERT INTO estudiantes (codigo, nombre, apellido, imagen, id_aula, id_sede) VALUES (?,?,?,?,?,?)");
+        return $consult->execute([$codigo, $nombre, $apellido, $img, $carrera,$nivel]);
     }
 
     public function delete($id)
@@ -53,10 +54,11 @@ class EstudiantesModel{
         return $consult->execute([0, $id]);
     }
 
-    public function update($codigo, $nombre, $apellido, $telefono, $direccion, $img, $carrera,$nivel, $id)
+    public function update($codigo, $nombre, $apellido, $img, $carrera,$nivel, $id)
     {
-        $consult = $this->pdo->prepare("UPDATE estudiantes SET codigo=?, nombre=?, apellido=?, telefono=?, direccion=?, imagen=?, id_aula=?, id_sede=? WHERE id=?");
-        return $consult->execute([$codigo, $nombre, $apellido, $telefono, $direccion, $img, $carrera,$nivel, $id]);
+        // $consult = $this->pdo->prepare("UPDATE estudiantes SET codigo=?, nombre=?, apellido=?, telefono=?, direccion=?, imagen=?, id_aula=?, id_sede=? WHERE id=?");
+        $consult = $this->pdo->prepare("UPDATE estudiantes SET codigo=?, nombre=?, apellido=?, imagen=?, id_aula=?, id_sede=? WHERE id=?");
+        return $consult->execute([$codigo, $nombre, $apellido, $img, $carrera,$nivel, $id]);
     }
 
     //consultar por codigo

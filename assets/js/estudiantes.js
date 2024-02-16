@@ -16,7 +16,7 @@ const inputFile = document.querySelector('#file');
 const imgArea = document.querySelector('.img-area');
 
 document.addEventListener('DOMContentLoaded', function () {
-  
+
   cargarCarreras();
   cargarNiveles();
 
@@ -30,28 +30,69 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'carreras' },
       { data: 'codigo' },
       { data: 'nombres' },
-      { data: 'telefono' },
+      // { data: 'telefono' },
       { data: 'foto' },
-      { data: 'direccion' },
+      // { data: 'direccion' },
       { data: 'niveles' },
       { data: 'accion' }
     ],
     language: {
       url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json'
     },
-    "order": [[0, 'desc']]
+    "order": [[0, 'desc']],
+    dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+    buttons: [{
+      //Botón para Excel
+      extend: 'excelHtml5',
+      footer: true,
+      title: 'Archivo',
+      titleAttr: 'Exportar Excel',
+      filename: 'Export_File',
+
+      //Aquí es donde generas el botón personalizado
+      text: '<span class="badge badge-success"><i class="fas fa-file-excel"></i></span>'
+    },
+    //Botón para PDF
+    {
+      extend: 'pdfHtml5',
+      download: 'open',
+      footer: true,
+      title: 'Reporte de estudiantes',
+      filename: 'Reporte de estudiantes',
+      titleAttr: 'Exportar Pdf',
+      text: '<span class="badge badge-danger"><i class="fas fa-file-pdf"></i></span>',
+      exportOptions: {
+        columns: [0, ':visible']
+      }
+    },
+    //Botón para copiar
+    {
+      extend: 'copyHtml5',
+      footer: true,
+      title: 'Reporte de usuarios',
+      filename: 'Reporte de usuarios',
+      titleAttr: 'Copiar',
+      text: '<span class="badge badge-primary"><i class="fas fa-copy"></i></span>',
+      exportOptions: {
+        columns: [0, ':visible']
+      }
+    }
+    ]
+
   });
   frm.onsubmit = function (e) {
     e.preventDefault();
     if (codigo.value == '' || nombre.value == ''
-    || apellido.value == '' || carrera.value == '' || nivel.value == '') {
+      || apellido.value == '' || carrera.value == '' || nivel.value == '') {
       message('error', 'TODO LOS CAMPOS CON * SON REQUERIDOS')
     } else {
       const frmData = new FormData(frm);
-       // Agregar la imagen al FormData si está presente
-    if (inputFile.files.length > 0) {
-      frmData.append('image', inputFile.files[0]);
-    }
+      // Agregar la imagen al FormData si está presente
+      if (inputFile.files.length > 0) {
+        frmData.append('image', inputFile.files[0]);
+      }
       axios.post(ruta + 'controllers/estudiantesController.php?option=save', frmData)
         .then(function (response) {
           console.log(response.data);
@@ -75,13 +116,13 @@ document.addEventListener('DOMContentLoaded', function () {
     codigo.focus();
     const img = imgArea.querySelector('img');
     if (img) {
-        img.remove(); // Eliminar la imagen si existe
-        imgArea.classList.remove('active'); // Eliminar la clase "active" del contenedor de la imagen
+      img.remove(); // Eliminar la imagen si existe
+      imgArea.classList.remove('active'); // Eliminar la clase "active" del contenedor de la imagen
     }
     // Restablecer el valor del atributo "data-img" a una cadena vacía
     imgArea.dataset.img = '';
     const imgAnteriorInput = document.querySelector('#img_anterior');
-    imgAnteriorInput.value='';
+    imgAnteriorInput.value = '';
     console.log(imgAnteriorInput.value);
   }
 })
@@ -117,10 +158,10 @@ function editEst(id) {
       const info = response.data;
       console.log(info);
       codigo.value = info.codigo;
-      telefono.value = info.telefono;
+      // telefono.value = info.telefono;
       nombre.value = info.nombre;
       apellido.value = info.apellido;
-      direccion.value = info.direccion;
+      // direccion.value = info.direccion;
       carrera.value = info.id_aula;
       nivel.value = info.id_sede;
       id_estudiante.value = info.id;
@@ -178,27 +219,27 @@ function cargarNiveles() {
 }
 
 selectImage.addEventListener('click', function () {
-	inputFile.click();
+  inputFile.click();
 })
 
 inputFile.addEventListener('change', function () {
-	const image = this.files[0]
-	if(image.size < 2000000) {
-		const reader = new FileReader();
-		reader.onload = ()=> {
-			const allImg = imgArea.querySelectorAll('img');
-			allImg.forEach(item=> item.remove());
-			const imgUrl = reader.result;
-			const img = document.createElement('img');
+  const image = this.files[0]
+  if (image.size < 2000000) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const allImg = imgArea.querySelectorAll('img');
+      allImg.forEach(item => item.remove());
+      const imgUrl = reader.result;
+      const img = document.createElement('img');
       console.log(img);
-			img.src = imgUrl;
-			imgArea.appendChild(img);
-			imgArea.classList.add('active');
-			imgArea.dataset.img = image.name;
-		}
-		reader.readAsDataURL(image);
+      img.src = imgUrl;
+      imgArea.appendChild(img);
+      imgArea.classList.add('active');
+      imgArea.dataset.img = image.name;
+    }
+    reader.readAsDataURL(image);
     console.log(image);
-	} else {
-		alert("Image size more than 2MB");
-	}
+  } else {
+    alert("Image size more than 2MB");
+  }
 })
