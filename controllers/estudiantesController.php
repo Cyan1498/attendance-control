@@ -20,7 +20,7 @@ switch ($option) {
 
             // $data[$i]['foto'] = '<img src="' . RUTA . "assets/images/estudiante/" . $data[$i]['imagen'] . '" alt="Imagen del estudiante" >';
             // Verificar si la imagen existe
-            if (!empty($data[$i]['imagen'])) {
+            if ($data[$i]['imagen'] !== 'default.png') {
                 // Si existe una imagen, usar la ruta correspondiente
                 $data[$i]['foto'] = '<img src="' . RUTA . "assets/images/estudiante/" . $data[$i]['imagen'] . '" alt="Imagen del estudiante" >';
             } else {
@@ -43,7 +43,8 @@ switch ($option) {
         // Obtener el nombre de la imagen anterior del formulario si está presente
         $img_anterior = isset($_POST['img_anterior']) ? $_POST['img_anterior'] : "";
         // Verificar si se ha enviado una imagen
-        $img = !empty($_FILES['image']) ? $_FILES['image']['name'] : "default.png";
+        // $img = !empty($_FILES['image']) ? $_FILES['image']['name'] : "default.png";
+        $img = !empty($_FILES['image']) ? $_FILES['image']['name'] : $img_anterior;
 
 
         // Guardar la imagen en el directorio
@@ -79,7 +80,7 @@ switch ($option) {
         } else {
             $consult = $estudiantes->comprobarCodigo($codigo, $id_estudiante);
             if (empty($consult)) {
-                $result = $estudiantes->update($codigo, $nombre, $apellido, $img_anterior, $carrera, $nivel, $id_estudiante);
+                $result = $estudiantes->update($codigo, $nombre, $apellido, $img, $carrera, $nivel, $id_estudiante);
                 if ($result) {
                     $res = array('tipo' => 'success', 'mensaje' => 'ESTUDIANTE MODIFICADO');
                 } else {
