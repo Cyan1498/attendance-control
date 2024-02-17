@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var $this = $(this),
                 $state = $this.find('button > .state');
             $this.addClass('loading');
-            $state.html('Authenticating');
+            $state.html('Verificando...');
 
             axios.post(ruta + 'controllers/usuariosController.php?option=acceso', {
                 email: email.value,
@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (info.tipo == 'success') {
                         setTimeout(() => {
                             $this.addClass('ok');
-                            $state.html('Welcome back!'); $this.addClass('ok');
-                            $state.html('Welcome back!');
+                            $state.html('Bienvenido!'); $this.addClass('ok');
+                            $state.html('Bienvenido!');
                             setTimeout(() => {
                                 window.location = ruta + 'plantilla.php';
                             }, 2000);
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     } else {
                         setTimeout(function () {
-                            $state.html('Login');
+                            $state.html('Ingresar');
                             $this.removeClass('ok loading');
                             working = false;
                             message(info.tipo, info.mensaje);
