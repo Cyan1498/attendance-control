@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Acceso al sistema</title>
+    <title>Control de Asistencia</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -19,6 +19,7 @@
     <link href="<?php echo RUTA . 'assets/'; ?>css/snackbar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/animate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/thales02.png" />
 </head>
 
 <body class="bg-light p-3 p-md-4 p-xl-5">
