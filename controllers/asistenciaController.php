@@ -86,6 +86,29 @@ switch ($option) {
         }
         echo json_encode($array);
         break;
+    case 'listarxfechaActual':
+        $data = $asistencias->getAsisxfechActual();
+        for ($i = 0; $i < count($data); $i++) {
+            $data[$i]['nombre'] = $data[$i]['estudiante'];
+            $data[$i]['ingreso'] = '<span class="badge bg-info">' . $data[$i]['ingreso'] . '</span>';
+            $data[$i]['salida'] = '<span class="badge bg-success">' . $data[$i]['salida'] . '</span>';
+            $data[$i]['accion'] = '';
+        }
+        echo json_encode($data);
+        break;
+
+    case 'listarxRangoFechas':
+        $fechaInicial = $_POST['fechaInicial'];
+        $fechaFinal = $_POST['fechaFinal'];
+        $data = $asistencias->getAsistenciasxFechas($fechaInicial, $fechaFinal);
+        for ($i = 0; $i < count($data); $i++) {
+            $data[$i]['nombre'] = $data[$i]['estudiante'];
+            $data[$i]['ingreso'] = '<span class="badge bg-info">' . $data[$i]['ingreso'] . '</span>';
+            $data[$i]['salida'] = '<span class="badge bg-success">' . $data[$i]['salida'] . '</span>';
+            $data[$i]['accion'] = '';
+        }
+        echo json_encode($data);
+        break;
     default:
         # code...
         break;

@@ -37,6 +37,8 @@
 
 <script src="<?php echo RUTA . 'assets/'; ?>js/snackbar.min.js"></script>
 <script src="<?php echo RUTA . 'assets/'; ?>js/axios.min.js"></script>
+<!-- Para el calendario -->
+<script src="<?php echo RUTA . 'assets/'; ?>js/mc-calendar.min.js"></script>
 
 <script type="text/javascript" src="<?php echo RUTA . 'assets/'; ?>vendor/DataTables/datatables.min.js"></script>
 <script type="text/javascript" src="<?php echo RUTA . 'assets/'; ?>vendor/all.min.js"></script>

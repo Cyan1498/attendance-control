@@ -37,6 +37,8 @@ if (isset($_GET['pagina'])) {
                 $plantilla->sedes();
             } else if ($archivo == 'canales') {
                 $plantilla->carreras();
+            } else if ($archivo == 'reporteAsistencias') {
+                $plantilla->reporteAsistencias();
             } else if ($archivo == 'registrarAsistencia') {
                 $plantilla->registrar();
             } else if ($archivo == 'asistencia') {

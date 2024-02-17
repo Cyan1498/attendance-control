@@ -24,7 +24,8 @@
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
   
-
+  <!-- Para el calendario -->
+  <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/mc-calendar.min.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo RUTA . 'assets/'; ?>images/thales02.png" />
 </head>
@@ -105,6 +106,13 @@
               <li class="nav-item"> <a class="nav-link" href="?pagina=asistencia">Ver Asistencias</a></li>
             </ul>
           </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?pagina=reporteAsistencias">
+            <!-- <i class="mdi mdi-store-24-hour menu-icon"></i> -->
+            <i class="mdi mdi-file-pdf menu-icon"></i>
+            <span class="menu-title">Reportes</span>
+          </a>
         </li>
       </ul>
     </nav>

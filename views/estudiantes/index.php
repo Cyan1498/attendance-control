@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/dtbuttons.css">
 <form id="frmEstudiante" autocomplete="off" enctype="multipart/form-data">
     <div class="card mb-2">
         <div class="card-body">
@@ -71,8 +72,8 @@
             </div>
         </div>
         <div class="card-footer text-end">
-            <button type="button" class="btn btn-danger" id="btn-nuevo">Nuevo</button>
-            <button type="submit" class="btn btn-primary" id="btn-save">Guardar</button>
+            <button type="button" class="btn-custom-purple" id="btn-nuevo">Nuevo</button>
+            <button type="submit" class="btn-custom-red" id="btn-save">Guardar</button>
         </div>
     </div>
 </form>
