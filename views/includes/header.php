@@ -35,18 +35,18 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item sidebar-category">
-          <p>Navigation</p>
+          <p>Navegación</p>
           <span></span>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="plantilla.php">
             <i class="mdi mdi-view-quilt menu-icon"></i>
             <span class="menu-title">Dashboard</span>
-            <div class="badge badge-info badge-pill">2</div>
+            <div class="badge badge-info badge-pill">4</div>
           </a>
         </li>
         <li class="nav-item sidebar-category">
-          <p>Components</p>
+          <p>Componentes</p>
           <span></span>
         </li>
         <li class="nav-item">
@@ -64,13 +64,13 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?pagina=canales">
-            <i class="mdi mdi-view-headline menu-icon"></i>
+            <i class="mdi mdi-dns menu-icon"></i>
             <span class="menu-title">Canales</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?pagina=sedes">
-            <i class="mdi mdi-home-modern menu-icon"></i>
+            <i class="mdi mdi-store-24-hour menu-icon"></i>
             <span class="menu-title">Sedes</span>
           </a>
         </li>
@@ -82,7 +82,7 @@
         </li> -->
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#ui-student" aria-expanded="false" aria-controls="ui-basic">
-            <i class="mdi mdi-palette menu-icon"></i>
+            <i class="mdi mdi-account-multiple menu-icon"></i>
             <span class="menu-title">Estudiantes</span>
             <i class="menu-arrow"></i>
           </a>
