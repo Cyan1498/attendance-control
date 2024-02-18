@@ -3,12 +3,21 @@
 const btn_clear = document.querySelector('#btn-clear');
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Obtener la fecha actual en el formato YYYY-MM-DD
-  const currentDate = new Date().toISOString().split('T')[0];
+  // Obtener la fecha actual
+const currentDate = new Date();
+
+// Obtener el año, mes y día
+const year = currentDate.getFullYear();
+const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Agrega un 0 inicial si el mes es menor a 10
+const day = String(currentDate.getDate()).padStart(2, '0'); // Agrega un 0 inicial si el día es menor a 10
+
+// Formatear la fecha en el formato deseado (YYYY-MM-DD)
+const formattedDate = `${year}-${month}-${day}`;
+
 
   // Establecer las fechas actuales en los campos de fecha
-  document.getElementById('f1').value = currentDate;
-  document.getElementById('f2').value = currentDate;
+  document.getElementById('f1').value = formattedDate;
+  document.getElementById('f2').value = formattedDate;
 
   const table = $('#tbl_reporteAsistencias').DataTable({
     ajax: {

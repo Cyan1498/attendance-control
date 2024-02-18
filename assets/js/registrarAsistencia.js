@@ -3,6 +3,7 @@ const codigo = document.querySelector('#codigo');
 const entrada = document.querySelector('#entrada');
 const salida = document.querySelector('#salida');
 document.addEventListener('DOMContentLoaded', function () {
+    codigo.focus();
     contactForm.onsubmit = function (e) {
         e.preventDefault();
         if (codigo.value == '') {
