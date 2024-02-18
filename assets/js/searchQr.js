@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     frmEstudiante.addEventListener('submit', function (e) {
         e.preventDefault();
-        const codEstudiante = codigo.value;
+        const codEstudiante = codigo.value.trim();
 
         // Validar si se ingresó un código
         if (codEstudiante.trim() === '') {

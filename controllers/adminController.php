@@ -6,9 +6,12 @@ $id_user = $_SESSION['idusuario'];
 switch ($option) {
     case 'totales':
         $fecha = date('Y-m-d');
+        $fechaInicial = '2024-01-01'; // Reemplaza con la fecha inicial deseada
+        $fechaFinal = '2024-12-31';
         $data['usuario'] = $admin->getDatos('usuario');
         $data['estudiante'] = $admin->getDatos('estudiantes');
         $data['asistencia'] = $admin->getAsistencia($fecha);
+        // $data['asistenciasDiarias'] = $admin->getAsistenciasDiarias($fechaInicial, $fechaFinal); 
         $data['carrera'] = $admin->getDatos('aulas');
         echo json_encode($data);
         break;
@@ -33,6 +36,10 @@ switch ($option) {
             }
         }
         echo json_encode($res);
+        break;
+    case 'weekAsistencias':
+        $data = $admin->getWeekAsistencias();
+        echo json_encode($data);
         break;
     default:
         # code...

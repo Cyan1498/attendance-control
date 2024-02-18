@@ -18,16 +18,16 @@
         </div>
         <div class="table-responsive">
             <table class="table table-striped table-hover" style="width: 100%;" id="table_asistencia">
-                <thead>
+                <thead style="background-color: hsl(227, 34%, 15%);">
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Código</th>
-                        <th scope="col">Estudiante</th>
-                        <th scope="col">Canal</th>
-                        <th scope="col">Sede</th>
-                        <th scope="col">Turno Mañana</th>
-                        <th scope="col">Turno Tarde</th>
+                        <th scope="col" style="color: #fff;">Id</th>
+                        <th scope="col" style="color: #fff;">Fecha</th>
+                        <th scope="col" style="color: #fff;">Código</th>
+                        <th scope="col" style="color: #fff;">Estudiante</th>
+                        <th scope="col" style="color: #fff;">Canal</th>
+                        <th scope="col" style="color: #fff;">Sede</th>
+                        <th scope="col" style="color: #fff;">Turno Mañana</th>
+                        <th scope="col" style="color: #fff;">Turno Tarde</th>
                         <th></th>
                     </tr>
                 </thead>
