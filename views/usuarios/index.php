@@ -17,13 +17,13 @@
                         <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo">
                     </div>
                 </div>
-                <div class="col-md-2">
+                <!-- <div class="col-md-2">
                     <label for="">Direccion <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
                     </div>
-                </div>
+                </div> -->
                 <div class="col-md-3">
                     <label for="">Contraseña <span class="text-danger">*</span></label>
                     <div class="input-group mb-3">
@@ -48,7 +48,7 @@
                         <th scope="col">Id</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Correo</th>
-                        <th scope="col">Dirección</th>
+                        <!-- <th scope="col">Dirección</th> -->
                         <th></th>
                     </tr>
                 </thead>

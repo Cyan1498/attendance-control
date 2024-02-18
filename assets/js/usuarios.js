@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'idusuario' },
       { data: 'nombre' },
       { data: 'correo' },
-      { data: 'direccion' },
+      // { data: 'direccion' },
       { data: 'accion' }
     ],
     language: {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
   frm.onsubmit = function (e) {
     e.preventDefault();
     if (correo.value == '' || nombre.value == ''
-      || direccion.value == ''|| clave.value == '') {
+      || clave.value == '') {
       message('error', 'TODO LOS CAMPOS CON * SON REQUERIDOS')
     } else {
       const frmData = new FormData(frm);

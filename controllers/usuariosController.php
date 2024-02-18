@@ -45,14 +45,14 @@ switch ($option) {
     case 'save':
         $nombre = $_POST['nombre'];
         $correo = $_POST['correo'];
-        $direccion = $_POST['direccion'];
+        // $direccion = $_POST['direccion'];
         $clave = $_POST['clave'];
         $id_user = $_POST['id_user'];
         if ($id_user == '') {
             $consult = $usuarios->comprobarCorreo($correo);
             if (empty($consult)) {
                 $hash = password_hash($clave, PASSWORD_DEFAULT);
-                $result = $usuarios->saveUser($nombre, $correo, $hash, $direccion);
+                $result = $usuarios->saveUser($nombre, $correo, $hash);
                 if ($result) {
                     $res = array('tipo' => 'success', 'mensaje' => 'USUARIO REGISTRADO');
                 } else {
@@ -62,7 +62,7 @@ switch ($option) {
                 $res = array('tipo' => 'error', 'mensaje' => 'EL CORREO YA EXISTE');
             }
         } else {
-            $result = $usuarios->updateUser($nombre, $correo, $direccion, $id_user);
+            $result = $usuarios->updateUser($nombre, $correo, $id_user);
             if ($result) {
                 $res = array('tipo' => 'success', 'mensaje' => 'USUARIO MODIFICADO');
             } else {
