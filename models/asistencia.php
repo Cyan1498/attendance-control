@@ -1,9 +1,11 @@
 <?php
 require_once '../config.php';
 require_once 'conexion.php';
-class AsistenciaModel{
+class AsistenciaModel
+{
     private $pdo, $con;
-    public function __construct() {
+    public function __construct()
+    {
         $this->con = new Conexion();
         $this->pdo = $this->con->conectar();
     }
@@ -59,8 +61,50 @@ class AsistenciaModel{
 
     public function buscarEstudiante($valor)
     {
-        $consult = $this->pdo->prepare("SELECT * FROM estudiantes WHERE (nombre LIKE '%". $valor . "%' OR apellido LIKE '%". $valor ."%') AND estado = 1 LIMIT 10");
+        $consult = $this->pdo->prepare("SELECT * FROM estudiantes WHERE (nombre LIKE '%" . $valor . "%' OR apellido LIKE '%" . $valor . "%') AND estado = 1 LIMIT 10");
         $consult->execute();
+        return $consult->fetchAll(PDO::FETCH_ASSOC);
+    }
+    //Para el reporte
+    public function getAsisxfechActual()
+    {
+        $consult = $this->pdo->prepare(
+            "SELECT a.*, 
+                e.codigo, 
+                CONCAT(e.nombre, ' ', e.apellido) AS estudiante, 
+                c.nombre AS aula, 
+                n.nombre AS sede 
+                FROM asistencias a 
+                INNER JOIN estudiantes e 
+                ON a.id_estudiante = e.id 
+                INNER JOIN aulas c 
+                ON e.id_aula = c.id 
+                INNER JOIN sedes n 
+                ON e.id_sede = n.id
+                WHERE DATE(a.fecha) = CURRENT_DATE()"
+        );
+        $consult->execute();
+        return $consult->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAsistenciasxFechas($fechaInicial, $fechaFinal)
+    {
+        $consult = $this->pdo->prepare(
+            "SELECT a.*, 
+                e.codigo, 
+                CONCAT(e.nombre, ' ', e.apellido) AS estudiante, 
+                c.nombre AS aula, 
+                n.nombre AS sede 
+                FROM asistencias a 
+                INNER JOIN estudiantes e 
+                ON a.id_estudiante = e.id 
+                INNER JOIN aulas c 
+                ON e.id_aula = c.id 
+                INNER JOIN sedes n 
+                ON e.id_sede = n.id 
+                WHERE a.fecha BETWEEN ? AND ?"
+        );
+        $consult->execute([$fechaInicial, $fechaFinal]);
         return $consult->fetchAll(PDO::FETCH_ASSOC);
     }
 }

@@ -12,15 +12,15 @@ switch ($option) {
             $data[$i]['carreras'] = '<span class="badge mx-1" style="background: #' . $colorCarrera . ';">' . $data[$i]['aula'] . '</span>';
             $data[$i]['niveles'] = '<span class="badge mx-1" style="background: #' . $colorNivel . ';">' . $data[$i]['sede'] . '</span>';
             $data[$i]['accion'] = '<div class="d-flex">
-                <a class="btn btn-danger btn-sm" onclick="deleteEst(' . $data[$i]['id'] . ')"><i class="fas fa-eraser"></i></a>
-                <a class="btn btn-primary btn-sm" onclick="editEst(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></a>
+                <a class="btn-custom-red btn-delete" onclick="deleteEst(' . $data[$i]['id'] . ')"><i class="fas fa-eraser"></i></a>
+                <a class="btn-custom-purple btn-edit" onclick="editEst(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></a>
                 </div>';
             // Agregar la ruta de la imagen a los datos del estudiante
             // $data[$i]['imagen'] = '<img src="' . $data[$i]['imagen'] . '" alt="Imagen del estudiante">';
 
             // $data[$i]['foto'] = '<img src="' . RUTA . "assets/images/estudiante/" . $data[$i]['imagen'] . '" alt="Imagen del estudiante" >';
             // Verificar si la imagen existe
-            if ($data[$i]['imagen'] !== 'default.png') {
+            if ($data[$i]['imagen'] !== "") {
                 // Si existe una imagen, usar la ruta correspondiente
                 $data[$i]['foto'] = '<img src="' . RUTA . "assets/images/estudiante/" . $data[$i]['imagen'] . '" alt="Imagen del estudiante" >';
             } else {

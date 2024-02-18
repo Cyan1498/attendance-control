@@ -1,0 +1,58 @@
+/* Anula los estilos de la clase que afecta a todos los botones */
+.btn {
+    background-color: transparent !important;
+    /* Hace transparente el fondo */
+    border: none !important;
+    /* Elimina el borde */
+    background-color: hsl(227, 34%, 15%) !important;
+}
+
+.btn-custom-purple,
+.btn-custom-red {
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    color: white;
+    padding: 0.625rem 1.25rem; /* Relleno en medidas de rem */
+    border: 1px solid transparent;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.1875rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn-custom-purple {
+    background-color: #6640b2;
+    border-color: #6640b2;
+}
+
+.btn-custom-red {
+    background-color: #f83e37;
+    border-color: #f83e37;
+}
+
+.btn-custom-purple:hover {
+    background-color: #411599;
+    border-color: #891af0;
+}
+
+.btn-custom-red:hover {
+    background-color: #dd1212;
+    border-color: #f01a1a;
+}
+
+.btn-edit {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.81rem;
+    color: #f3ecec;
+    cursor: pointer !important;
+}
+
+.btn-delete {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.81rem;
+    color: hsla(0, 0%, 93%, 0.925);
+    margin-right: .02rem;
+    cursor: pointer;
+}

@@ -44,6 +44,13 @@ class Plantilla{
     {
         include_once 'views/asistencia/verAsistencia.php';
     }
+
+    ###### pagina reportes ######
+    public function reporteAsistencias()
+    {
+        include_once 'views/reportes/reporteAsistencias.php';
+    }
+    
     ###### pagina usuarios ######
     public function usuarios()
     {

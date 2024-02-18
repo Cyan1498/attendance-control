@@ -15,54 +15,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="codigo">Código</label>
-                            <div class="input-group">
-                                <input id="codigo" class="form-control" type="text" name="codigo" >
-                                <button class="btn btn-primary" type="submit" id="btn-buscar">Buscar</button>
-                            </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background-color: hsl(227, 34%, 15%); color: #fff;">
+                            DATOS DEL ESTUDIANTE
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group mb-3">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" readonly>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group mb-3">
-                            <label for="apellido">Apellidos</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" readonly>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="sede">Sede</label>
-                            <input type="text" class="form-control" id="sede" name="sede" readonly>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="card-body">
                             <div class="form-group">
-                                <label for="telefono">Telefono</label>
-                                <input type="number" class="form-control" id="telefono" name="telefono" readonly>
+                                <label for="codigo">Código</label>
+                                <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese un código">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre</label>
+                                        <label class="form-control" id="nombre" name="nombre"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellido">Apellidos</label>
+                                        <label class="form-control" id="apellido" name="apellido"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="sede">Sede</label>
+                                        <label class="form-control" id="sede" name="sede"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="aula">Aula</label>
+                                        <label class="form-control" id="aula" name="aula" disabled></label>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="direccion">Dirección</label>
-                                <input type="text" class="form-control" id="direccion" name="direccion" readonly>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="aula">Aula</label>
-                                <input type="text" class="form-control" id="aula" name="aula" disabled>
-                            </div>
+                    </div>
+                    <div class="row justify-content-end mt-3">
+                        <div class="col-auto">
+                            <button class="btn btn-primary" type="submit" id="btn-buscar">Buscar</button>
+                            <button class="btn btn-danger" type="button" id="btn_nuevo">Limpiar</button>
                         </div>
                     </div>
                 </div>
