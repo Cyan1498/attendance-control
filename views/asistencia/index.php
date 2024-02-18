@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="carrera">Aula</label>
+                    <label for="carrera">Canal</label>
                     <select id="carrera" class="form-control">
                     </select>
                 </div>
@@ -24,10 +24,10 @@
                         <th scope="col">Fecha</th>
                         <th scope="col">Código</th>
                         <th scope="col">Estudiante</th>
-                        <th scope="col">Aula</th>
+                        <th scope="col">Canal</th>
                         <th scope="col">Sede</th>
-                        <th scope="col">Ingreso</th>
-                        <th scope="col">Salida</th>
+                        <th scope="col">Turno Mañana</th>
+                        <th scope="col">Turno Tarde</th>
                         <th></th>
                     </tr>
                 </thead>
