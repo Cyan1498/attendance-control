@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     frm.onsubmit = function (e) {
         e.preventDefault();
-        if (telefono.value == '' || nombre.value == ''
-            || direccion.value == '' || correo.value == '') {
+        if (nombre.value == '') {
             message('error', 'TODO LOS CAMPOS CON * SON REQUERIDOS')
         } else {
             const frmData = new FormData(frm);

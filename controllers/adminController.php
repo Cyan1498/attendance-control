@@ -25,7 +25,7 @@ switch ($option) {
         $direccion = $_POST['direccion'];
         $correo = $_POST['correo'];
         $id = $_POST['id'];
-        if (empty($id) || empty($nombre) || empty($telefono) || empty($direccion) || empty($correo)) {
+        if (empty($id) || empty($nombre)) {
             $res = array('tipo' => 'error', 'mensaje' => 'TODO LOS CAMPOS SON REQUERIDOS');
         } else {
             $result = $admin->saveDatos($nombre, $telefono, $correo, $direccion, $id);

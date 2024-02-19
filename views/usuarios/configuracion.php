@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label for="">Correo <span class="text-danger">*</span></label>
+                    <label for="">Correo </label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label for="">Teléfono <span class="text-danger">*</span></label>
+                    <label for="">Teléfono </label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6">                    
                     <div class="form-group">
-                        <label for="">Dirección <span class="text-danger">*</span></label>
+                        <label for="">Dirección </label>
                         <textarea id="direccion" class="form-control" name="direccion" rows="3" placeholder="Dirección"></textarea>
                     </div>
                 </div>

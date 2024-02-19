@@ -30,7 +30,7 @@ switch ($option) {
         for ($i = 0; $i < count($data); $i++) {
             $data[$i]['start'] = $data[$i]['fecha'];
             $data[$i]['color'] = '#00d082';
-            //$data[$i]['end'] = $data[$i]['salida'];
+            // $data[$i]['end'] = $data[$i]['salida'];
             $data[$i]['title'] = $data[$i]['estudiante'];
         }
         echo json_encode($data);
@@ -62,7 +62,7 @@ switch ($option) {
                 if (!empty($verificarEntrada)) {
                     $registrar = $asistencias->registrarSalida($salida, $verificarEntrada['id']);
                     if ($registrar) {
-                        $res = array('tipo' => 'success', 'mensaje' => 'SALIDA REGISTRADO');
+                        $res = array('tipo' => 'success', 'mensaje' => 'INGRESO REGISTRADO');
                     } else {
                         $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL REGISTRAR');
                     }

@@ -44,8 +44,8 @@
                         <th scope="col" style="color: #fff;">Estudiante</th>
                         <th scope="col" style="color: #fff;">Aula</th>
                         <th scope="col" style="color: #fff;">Sede</th>
-                        <th scope="col" style="color: #fff;">Ingreso</th>
-                        <th scope="col" style="color: #fff;">Salida</th>
+                        <th scope="col" style="color: #fff;">Turno Mañana</th>
+                        <th scope="col" style="color: #fff;">Turno Tarde</th>
                         <th></th>
                     </tr>
                 </thead>

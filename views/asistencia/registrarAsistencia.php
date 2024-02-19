@@ -25,7 +25,6 @@
                         </div> -->
                     </div>
                     <h1 class="fst-italic lh-1 mb-4">Registro de asistencia</h1>
-                    <p class="mb-5">Entradas y salidas de estudiantes</p>
 
                     <!-- Email address input-->
                     <div class="row input-group-newsletter">
