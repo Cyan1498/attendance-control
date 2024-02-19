@@ -5,6 +5,7 @@ const id_nivel = document.querySelector('#id_nivel');
 const btn_nuevo = document.querySelector('#btn-nuevo');
 const btn_save = document.querySelector('#btn-save');
 document.addEventListener('DOMContentLoaded', function () {
+  nombre.focus();
   $('#table_niveles').DataTable({
     ajax: {
       url: ruta + 'controllers/nivelesController.php?option=listar',

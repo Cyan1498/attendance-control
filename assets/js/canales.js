@@ -4,6 +4,7 @@ const id_carrera = document.querySelector('#id_carrera');
 const btn_nuevo = document.querySelector('#btn-nuevo');
 const btn_save = document.querySelector('#btn-save');
 document.addEventListener('DOMContentLoaded', function () {
+  nombre.focus();
   $('#table_carreras').DataTable({
     ajax: {
       url: ruta + 'controllers/carrerasController.php?option=listar',

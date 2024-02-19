@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     message(info.tipo, info.mensaje);
                     if (info.tipo == 'success') {
                         codigo.value = '';
+                        codigo.focus();
                     }
                 })
                 .catch(function (error) {

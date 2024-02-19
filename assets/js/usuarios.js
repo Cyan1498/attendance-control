@@ -7,6 +7,7 @@ const id_user = document.querySelector('#id_user');
 const btn_nuevo = document.querySelector('#btn-nuevo');
 const btn_save = document.querySelector('#btn-save');
 document.addEventListener('DOMContentLoaded', function () {
+  nombre.focus();
   $('#table_users').DataTable({
     ajax: {
       url: ruta + 'controllers/usuariosController.php?option=listar',

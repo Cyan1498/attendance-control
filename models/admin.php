@@ -94,7 +94,8 @@ class AdminModel
               INNER JOIN aulas a ON e.id_aula = a.id 
               INNER JOIN sedes s ON e.id_sede = s.id
               WHERE s.nombre = 'Chimbote' -- Aquí se establece Chimbote directamente
-              GROUP BY a.nombre";
+              GROUP BY a.nombre
+              ORDER BY a.nombre";
         
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
@@ -108,7 +109,8 @@ class AdminModel
               INNER JOIN aulas a ON e.id_aula = a.id 
               INNER JOIN sedes s ON e.id_sede = s.id
               WHERE s.nombre = 'Nv. chimbote' -- Aquí se establece Chimbote directamente
-              GROUP BY a.nombre";
+              GROUP BY a.nombre
+              ORDER BY a.nombre";
         
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();

@@ -90,7 +90,7 @@ function cargarGraficoCanalChimbote() {
             const data = response.data;
             console.log(data);
             // Destruir el gráfico actual si existe
-            var chart = document.querySelector('#chart-container-canales');
+            var chart = document.querySelector('#chart-container-chimbote');
             if (chart) {
                 ApexCharts.exec('chart', 'destroy');
             }
@@ -108,7 +108,7 @@ function crearGraficoCanalChimbote(data) {
             width: 380,
             type: 'donut',
         },
-        labels: ['Medicina', 'Ingeniería', 'Letras'], // Nombres de los canales
+        labels: ['Ingeniería', 'Letras', 'Medicina'], // Nombres de los canales
         plotOptions: {
             pie: {
                 startAngle: -90,
@@ -171,7 +171,7 @@ function crearGraficoCanalNvChimbote(data) {
             width: 380,
             type: 'donut',
         },
-        labels: ['Medicina', 'Ingeniería', 'Letras'], // Nombres de los canales
+        labels: ['Ingeniería', 'Letras', 'Medicina'], // Nombres de los canales
         plotOptions: {
             pie: {
                 startAngle: -90,

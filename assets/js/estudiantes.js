@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   cargarCarreras();
   cargarNiveles();
+  codigo.focus();
 
   $('#table_estudiantes').DataTable({
     ajax: {
