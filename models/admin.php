@@ -49,7 +49,7 @@ class AdminModel
         return $consult->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getWeekAsistencias()
+    public function getWeekAsistencias($sede)
     {
         $dt = new DateTime();
         $asistenciasSemana = [];
@@ -61,8 +61,8 @@ class AdminModel
             // Obtener la fecha en formato Y-m-d
             $fecha = $dt->format('Y-m-d');
 
-            // Llamar a tu método para obtener las asistencias de ese día
-            $asistencias = $this->getAsistenciasDia($fecha);
+            // Llamar a tu método para obtener las asistencias de ese día con la sede especificada
+            $asistencias = $this->getAsistenciasDia($fecha, $sede);
 
             // Agregar el total de asistencias de ese día al arreglo
             $asistenciasSemana[] = $asistencias;
@@ -71,13 +71,48 @@ class AdminModel
         return $asistenciasSemana;
     }
 
-    // Método para obtener las asistencias de un día específico
-    public function getAsistenciasDia($fecha)
+
+    // Método para obtener las asistencias de un día específico para una sede específica
+    public function getAsistenciasDia($fecha, $sede)
     {
-        $consult = $this->pdo->prepare("SELECT COUNT(*) AS total FROM asistencias WHERE DATE(fecha) = ?");
-        $consult->execute([$fecha]);
+        $consult = $this->pdo->prepare("
+        SELECT COUNT(*) AS total 
+        FROM asistencias a
+        INNER JOIN estudiantes e ON a.id_estudiante = e.id
+        INNER JOIN sedes s ON e.id_sede = s.id
+        WHERE DATE(a.fecha) = ? AND s.nombre = ?
+    ");
+        $consult->execute([$fecha, $sede]);
         $result = $consult->fetch(PDO::FETCH_ASSOC);
 
         return $result['total'];
+    }
+
+    public function getEstPorCanalChimbote() {
+        $query = "SELECT a.nombre AS canal, COUNT(e.id) AS cantidad_estudiantes 
+              FROM estudiantes e 
+              INNER JOIN aulas a ON e.id_aula = a.id 
+              INNER JOIN sedes s ON e.id_sede = s.id
+              WHERE s.nombre = 'xhimbote' -- Aquí se establece Chimbote directamente
+              GROUP BY a.nombre";
+        
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getEstPorCanalNvchimbote() {
+        $query = "SELECT a.nombre AS canal, COUNT(e.id) AS cantidad_estudiantes 
+              FROM estudiantes e 
+              INNER JOIN aulas a ON e.id_aula = a.id 
+              INNER JOIN sedes s ON e.id_sede = s.id
+              WHERE s.nombre = 'Nv. chimbote' -- Aquí se establece Chimbote directamente
+              GROUP BY a.nombre";
+        
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
