@@ -41,11 +41,11 @@
                                 <input type="radio" name="radio" value="salida" id="option-2" />
                                 <label for="option-1" class="option option-1">
                                     <div class="dot"></div>
-                                    <span>Entrada</span>
+                                    <span>Turno Mañana</span>
                                 </label>
                                 <label for="option-2" class="option option-2">
                                     <div class="dot"></div>
-                                    <span>Salida</span>
+                                    <span>Turno Tarde</span>
                                 </label>
                             </div>
                         </div>
