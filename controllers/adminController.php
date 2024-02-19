@@ -38,8 +38,18 @@ switch ($option) {
         echo json_encode($res);
         break;
     case 'weekAsistencias':
-        $data = $admin->getWeekAsistencias();
+        // $sede = 'Chimbote'; // Puedes cambiar esto según tu lógica
+        $sede = $_GET['sede'];
+        $data = $admin->getWeekAsistencias($sede);
         echo json_encode($data);
+        break;
+    case 'canalChimbote':
+        $data = $admin->getEstPorCanalChimbote();
+        echo json_encode(array_column($data, 'cantidad_estudiantes'));
+        break;
+    case 'canalNvChimbote':
+        $data = $admin->getEstPorCanalNvChimbote();
+        echo json_encode(array_column($data, 'cantidad_estudiantes'));
         break;
     default:
         # code...
