@@ -93,7 +93,7 @@ class AdminModel
               FROM estudiantes e 
               INNER JOIN aulas a ON e.id_aula = a.id 
               INNER JOIN sedes s ON e.id_sede = s.id
-              WHERE s.nombre = 'xhimbote' -- Aquí se establece Chimbote directamente
+              WHERE s.nombre = 'Chimbote' -- Aquí se establece Chimbote directamente
               GROUP BY a.nombre";
         
         $stmt = $this->pdo->prepare($query);

@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
         columns: [0, ':visible']
       }
     }
-    ]
+    ],
+    responsive: true
 
   });
   frm.onsubmit = function (e) {

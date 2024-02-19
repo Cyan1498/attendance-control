@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label for="sedeSelect">Seleccionar Sede:</label>
                     <select id="sedeSelect" class="form-control">
-                        <option value="xhimbote">Chimbote</option>
+                        <option value="Chimbote">Chimbote</option>
                         <option value="Nv. Chimbote">Nv. Chimbote</option>
                     </select>
                 </div>

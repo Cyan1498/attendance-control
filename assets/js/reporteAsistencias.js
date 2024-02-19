@@ -78,7 +78,8 @@ const formattedDate = `${year}-${month}-${day}`;
         columns: [0, ':visible']
       }
     }
-    ]
+    ],
+    responsive: true
   });
 
   // $('#btn-filtrar').on('click', function () {
