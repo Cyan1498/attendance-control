@@ -11,6 +11,7 @@ switch ($option) {
             $data[$i]['nombres'] = $data[$i]['nombre'] . ' ' . $data[$i]['apellido'];
             $data[$i]['carreras'] = '<span class="badge mx-1" style="background: #' . $colorCarrera . ';">' . $data[$i]['aula'] . '</span>';
             $data[$i]['niveles'] = '<span class="badge mx-1" style="background: #' . $colorNivel . ';">' . $data[$i]['sede'] . '</span>';
+            $data[$i]['fecha'] = '<span class="badge bg-success">' . $data[$i]['fecha_registro'] . '</span>';
             $data[$i]['accion'] = '<div class="d-flex">
                 <a class="btn-custom-red btn-delete" onclick="deleteEst(' . $data[$i]['id'] . ')"><i class="fas fa-eraser"></i></a>
                 <a class="btn-custom-purple btn-edit" onclick="editEst(' . $data[$i]['id'] . ')"><i class="fas fa-edit"></i></a>

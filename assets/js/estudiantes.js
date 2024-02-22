@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'foto' },
       // { data: 'direccion' },
       { data: 'niveles' },
+      { data: 'fecha' },
       { data: 'accion' }
     ],
     language: {
