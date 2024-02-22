@@ -116,7 +116,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: 80vh; /* Establece la altura máxima en el 80% del viewport height */
-    max-width: 80vw; /* Establece el ancho máximo en el 80% del viewport width */
+    max-width: 50vw; /* Establece el ancho máximo en el 80% del viewport width */
     overflow: auto;
     background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
     border-radius: 5px;
