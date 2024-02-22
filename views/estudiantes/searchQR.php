@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/uploadImg.css">
 <form id="frmEstudiante" autocomplete="off" enctype="multipart/form-data">
     <div class="card mb-2">
         <div class="card-body">

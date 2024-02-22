@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // imgArea.appendChild(img);
                     console.log(estudiante.imagen);
                     const img = document.createElement('img');
-                    if (estudiante.imagen !== "default.png") {
+                    if (estudiante.imagen !== "") {
                         img.src = '../assets/images/estudiante/' + estudiante.imagen;
                     } else {
                         img.src = '../assets/images/default.png';

@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/snackbar.min.css">
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/jquery-ui.min.css">
   <!-- Para las imagenes -->
-  <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/uploadImg.css">
+  <!-- <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/uploadImg.css"> -->
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
   

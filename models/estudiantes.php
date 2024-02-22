@@ -44,7 +44,8 @@ class EstudiantesModel{
     public function save($codigo, $nombre, $apellido,$img, $carrera,$nivel)
     {
         // $consult = $this->pdo->prepare("INSERT INTO estudiantes (codigo, nombre, apellido, telefono, direccion, imagen, id_aula, id_sede) VALUES (?,?,?,?,?,?,?,?)");
-        $consult = $this->pdo->prepare("INSERT INTO estudiantes (codigo, nombre, apellido, imagen, id_aula, id_sede) VALUES (?,?,?,?,?,?)");
+        // $consult = $this->pdo->prepare("INSERT INTO estudiantes (codigo, nombre, apellido, imagen, id_aula, id_sede) VALUES (?,?,?,?,?,?)");
+        $consult = $this->pdo->prepare("INSERT INTO estudiantes (codigo, nombre, apellido, imagen, id_aula, id_sede, fecha_registro) VALUES (?,?,?,?,?,?, NOW())");
         return $consult->execute([$codigo, $nombre, $apellido, $img, $carrera,$nivel]);
     }
 
