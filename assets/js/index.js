@@ -91,9 +91,9 @@ function cargarGraficoCanalChimbote() {
             console.log(data);
             // Destruir el gráfico actual si existe
             var chart = document.querySelector('#chart-container-chimbote');
-            if (chart) {
-                ApexCharts.exec('chart', 'destroy');
-            }
+            // if (chart) {
+            //     ApexCharts.exec('chart', 'destroy');
+            // }
             crearGraficoCanalChimbote(data);
         })
         .catch(function (error) {
