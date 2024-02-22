@@ -7,7 +7,7 @@ const btnRegistrar = document.querySelector('#btnRegistrar');
 
 //VERIFICAR UN ESTUDIANTES ANTES DE REGISTRARLO
 
-// const btnBuscar = document.querySelector('#btn-buscar');
+const btnBuscar = document.querySelector('#btn-buscar');
 const btn_nuevo = document.querySelector('#btn_nuevo')
 const frmEstudiante = document.querySelector('#frmEstudiante');
 // const codigo = document.querySelector('#codigo');
@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     message('success', 'Estudiante encontrado con éxito');
                     btnRegistrar.disabled = false;
                     btn_nuevo.disabled = false;
+                    btnBuscar.disabled = true;
                 } else {
                     // Mostrar mensaje de error si el código no existe
                     message('error', 'El código no existe');
@@ -121,6 +122,7 @@ function limpiarFormulario() {
     contactForm.reset();
     btnRegistrar.disabled = true;
     btn_nuevo.disabled = true;
+    btnBuscar.disabled = false;
     // nombre.innerText = '';
     // apellido.innerText = '';
     nomcompleto.innerText = '';
@@ -145,7 +147,8 @@ imgArea.addEventListener('click', function() {
         img.classList.toggle('zoom');
     } else {
         // Si no hay una imagen presente, mostrar un mensaje
-        alert('No hay imagen cargada');
+        // alert('No hay imagen cargada');
+        message('error', 'No hay imagen cargada');
     }
 });
 
