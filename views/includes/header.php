@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/uploadImg.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
-  
+
   <!-- Para el calendario -->
   <link rel="stylesheet" href="<?php echo RUTA . 'assets/'; ?>css/mc-calendar.min.css">
   <!-- endinject -->
@@ -95,7 +95,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#ui-asistencia" aria-expanded="false" aria-controls="ui-basic" >
+          <a class="nav-link" data-bs-toggle="collapse" href="#ui-asistencia" aria-expanded="false" aria-controls="ui-basic">
             <i class="mdi mdi-calendar menu-icon"></i>
             <span class="menu-title">Asistencia</span>
             <i class="menu-arrow"></i>
@@ -138,9 +138,9 @@
             <span class="mdi mdi-menu"></span>
           </button>
         </div>
-        <div class="navbar-menu-wrapper navbar-search-wrapper d-none d-lg-flex align-items-center">
+        <div class="navbar-menu-wrapper navbar-search-wrapper d-flex d-lg-flex align-items-center ">
           <ul class="navbar-nav mr-lg-2">
-            <li class="nav-item nav-search d-none d-lg-block">
+            <li class="nav-item nav-search d-flex d-lg-block">
               <div class="input-group">
                 <input type="text" id="buscarEstudiante" class="form-control" placeholder="Buscar asistencias..." aria-label="search" aria-describedby="search">
               </div>
