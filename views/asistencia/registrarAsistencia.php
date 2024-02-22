@@ -72,7 +72,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <!-- <label for="sede">Sede</label> -->
-                                                    <span><b>SEDE: </b></span><label id="sede" name="sede"></label>
+                                                    <span><b>CANAL: </b></span><label id="sede" name="sede"></label>
                                                 </div>
                                                 <div class="form-group">
                                                     <!-- <label for="aula">Aula</label> -->

@@ -23,7 +23,7 @@
 <script src="<?php echo RUTA . 'assets/'; ?>vendor/js/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
-<script src="<?php echo RUTA . 'assets/'; ?>vendor/chart.js/Chart.min.js"></script>
+<!-- <script src="<?php echo RUTA . 'assets/'; ?>vendor/chart.js/Chart.min.js"></script> -->
 <script src="<?php echo RUTA . 'assets/'; ?>js/jquery.cookie.js" type="text/javascript"></script>
 <!-- End plugin js for this page-->
 <!-- inject:js -->
@@ -46,7 +46,7 @@
 <script type="text/javascript" src="<?php echo RUTA . 'assets/'; ?>js/es.js"></script>
 <script type="text/javascript" src="<?php echo RUTA . 'assets/'; ?>js/jquery-ui.min.js"></script>
 
-<script src="<?php echo RUTA . 'assets/index/'; ?>js/scripts.js"></script>
+<!-- <script src="<?php echo RUTA . 'assets/index/'; ?>js/scripts.js"></script> -->
 
 <script>
   const ruta = '<?php echo RUTA; ?>';

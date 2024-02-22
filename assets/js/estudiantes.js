@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'codigo' },
       { data: 'nombres' },
       // { data: 'telefono' },
-      { data: 'foto' },
+      // { data: 'foto' },
       // { data: 'direccion' },
       { data: 'niveles' },
       { data: 'fecha' },
