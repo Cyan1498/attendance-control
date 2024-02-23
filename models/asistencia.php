@@ -53,10 +53,16 @@ class AsistenciaModel
         return $consult->execute([$entrada, $fecha, $id_estudiante]);
     }
 
-    public function registrarSalida($salida, $id)
+    // public function registrarSalida($salida, $id)
+    // {
+    //     $consult = $this->pdo->prepare("UPDATE asistencias SET salida=? WHERE id = ?");
+    //     return $consult->execute([$salida, $id]);
+    // }
+
+    public function registrarSalida($salida, $fecha, $id_estudiante)
     {
-        $consult = $this->pdo->prepare("UPDATE asistencias SET salida=? WHERE id = ?");
-        return $consult->execute([$salida, $id]);
+        $consult = $this->pdo->prepare("INSERT INTO asistencias (salida, fecha, id_estudiante) VALUES (?,?,?)");
+        return $consult->execute([$salida, $fecha, $id_estudiante]);
     }
 
     public function buscarEstudiante($valor)

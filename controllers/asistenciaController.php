@@ -58,16 +58,16 @@ switch ($option) {
                 }
             } else {
                 $salida = date('Y-m-d H:i:s');
-                $verificarEntrada = $asistencias->getAsistencia($fecha, $consult['id']);
-                if (!empty($verificarEntrada)) {
-                    $registrar = $asistencias->registrarSalida($salida, $verificarEntrada['id']);
+                $verificarSalida = $asistencias->getAsistencia($fecha, $consult['id']);
+                if (empty($verificarSalida)) {
+                    $registrar = $asistencias->registrarSalida($salida, $fecha, $consult['id']);
                     if ($registrar) {
                         $res = array('tipo' => 'success', 'mensaje' => 'INGRESO REGISTRADO');
                     } else {
                         $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL REGISTRAR');
                     }
                 } else {
-                    $res = array('tipo' => 'error', 'mensaje' => 'NO SE REGISTRO EL INGRESO DEL ESTUDIANTE');
+                    $res = array('tipo' => 'error', 'mensaje' => 'ENTRADA YA ESTA REGISTRADA');
                 }
             }
         }
