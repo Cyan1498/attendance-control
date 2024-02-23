@@ -107,12 +107,25 @@
             </ul>
           </div>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="?pagina=reporteAsistencias">
-            <!-- <i class="mdi mdi-store-24-hour menu-icon"></i> -->
+            <i class="mdi mdi-store-24-hour menu-icon"></i>
             <i class="mdi mdi-file-pdf menu-icon"></i>
             <span class="menu-title">Reportes</span>
           </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#ui-reportes" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-account-multiple menu-icon"></i>
+            <span class="menu-title">Reportes</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-reportes">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="?pagina=reporteAsistencias">Asistencias</a></li>
+              <li class="nav-item"> <a class="nav-link" href="?pagina=reporteInasistencias">Inasistencias</a></li>
+            </ul>
+          </div>
         </li>
       </ul>
     </nav>

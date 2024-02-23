@@ -50,6 +50,10 @@ class Plantilla{
     {
         include_once 'views/reportes/reporteAsistencias.php';
     }
+    public function reporteInasistencias()
+    {
+        include_once 'views/reportes/reporteInasistencias.php';
+    }
     
     ###### pagina usuarios ######
     public function usuarios()

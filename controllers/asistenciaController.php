@@ -112,4 +112,15 @@ switch ($option) {
     default:
         # code...
         break;
+    case 'listarInasxfechaActual':
+        // $fechaActual = date('Y-m-d');
+        $data = $asistencias->getInasxfechActual();
+        echo json_encode($data);
+        break;
+    case 'listarInasxRangoFechas':
+        $fechaInicial = $_POST['fechaInicial'];
+        $fechaFinal = $_POST['fechaFinal'];
+        $data = $asistencias->getInasistenciasPorRangoFechas($fechaInicial, $fechaFinal);
+        echo json_encode($data);
+        break;
 }
