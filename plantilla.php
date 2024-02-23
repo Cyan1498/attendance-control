@@ -39,7 +39,10 @@ if (isset($_GET['pagina'])) {
                 $plantilla->carreras();
             } else if ($archivo == 'reporteAsistencias') {
                 $plantilla->reporteAsistencias();
-            } else if ($archivo == 'registrarAsistencia') {
+            } else if ($archivo == 'reporteInasistencias') {
+                $plantilla->reporteInasistencias();
+            }
+            else if ($archivo == 'registrarAsistencia') {
                 $plantilla->registrar();
             } else if ($archivo == 'asistencia') {
                 $plantilla->asistencia();

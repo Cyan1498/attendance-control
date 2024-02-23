@@ -107,4 +107,61 @@ class AsistenciaModel
         $consult->execute([$fechaInicial, $fechaFinal]);
         return $consult->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    //Para el reporte
+    public function getInasxfechActual()
+    {
+        $consult = $this->pdo->prepare(
+            "SELECT 
+                    e.id, 
+                    e.codigo, 
+                    CONCAT(e.nombre, ' ', e.apellido) AS nombre_estudiante, 
+                    aulas.nombre AS aula, 
+                    sedes.nombre AS sede, 
+                    CURDATE() AS fecha
+                    FROM estudiantes e
+                    LEFT JOIN asistencias a 
+                    ON e.id = a.id_estudiante 
+                    AND DATE(a.fecha) = CURDATE()
+                    LEFT JOIN aulas ON e.id_aula = aulas.id
+                    LEFT JOIN sedes ON e.id_sede = sedes.id
+                    WHERE a.id IS NULL;"
+        );
+        $consult->execute();
+        return $consult->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getInasistenciasPorRangoFechas($fechaInicial, $fechaFinal)
+    {
+        $consulta = $this->pdo->prepare(
+            "SELECT 
+                e.id, 
+                e.codigo, 
+                CONCAT(e.nombre, ' ', e.apellido) AS nombre_estudiante, 
+                aulas.nombre AS aula, 
+                sedes.nombre AS sede,
+                fecha.fecha AS fecha
+            FROM (
+                SELECT :fechaInicial + INTERVAL a.a + b.a * 10 DAY AS fecha
+                FROM (
+                    SELECT 0 AS a UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL
+                    SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9
+                ) AS a
+                CROSS JOIN (
+                    SELECT 0 AS a UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL
+                    SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9
+                ) AS b
+            ) AS fecha
+            CROSS JOIN estudiantes e
+            LEFT JOIN asistencias a ON e.id = a.id_estudiante AND DATE(a.fecha) = fecha.fecha
+            LEFT JOIN aulas ON e.id_aula = aulas.id
+            LEFT JOIN sedes ON e.id_sede = sedes.id
+            WHERE a.id IS NULL
+            AND fecha.fecha BETWEEN :fechaInicial AND :fechaFinal -- Ajusta las fechas según sea necesario
+            ORDER BY fecha.fecha, e.id;"
+        );
+
+        $consulta->execute(['fechaInicial' => $fechaInicial, 'fechaFinal' => $fechaFinal]);
+        return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
