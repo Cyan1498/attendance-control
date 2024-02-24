@@ -89,7 +89,7 @@
                         <th scope="col" style="color: #fff;">Código</th>
                         <th scope="col" style="color: #fff;">Nombres</th>
                         <!-- <th scope="col" style="color: #fff;">Telefono</th> -->
-                        <!-- <th scope="col" style="color: #fff;">Foto</th> -->
+                        <th scope="col" style="color: #fff;">Foto</th>
                         <!-- <th scope="col" style="color: #fff;">Dirección</th> -->
                         <th scope="col" style="color: #fff;">Sede</th>
                         <th scope="col" style="color: #fff;">Fecha Registro</th>

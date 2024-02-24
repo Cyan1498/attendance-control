@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { data: 'codigo' },
       { data: 'nombres' },
       // { data: 'telefono' },
-      // { data: 'foto' },
+      { data: 'foto' },
       // { data: 'direccion' },
       { data: 'niveles' },
       { data: 'fecha' },
@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     "order": [[0, 'desc']],
     dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>" +
-                "<'row'<'col-sm-12'tr>>" +
-                "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+      "<'row'<'col-sm-12'tr>>" +
+      "<'row'<'col-sm-5'i><'col-sm-7'p>>",
     buttons: [{
       //Botón para Excel
       extend: 'excelHtml5',
@@ -172,12 +172,16 @@ function editEst(id) {
       codigo.focus();
 
       // Cargar la imagen previa del estudiante si existe
-      if (info.imagen) {
+      if (info.imagen !== "") {
+        // img.src = '../assets/images/estudiante/' + estudiante.imagen;
         const img = document.createElement('img');
         img.src = '../assets/images/estudiante/' + info.imagen;
         // imgArea.innerHTML = ''; // Limpiar el área de la imagen
         imgArea.appendChild(img);
-        // imgArea.classList.add('active');
+      } else {
+        const img = document.createElement('img');
+        img.src = '../assets/images/default.png';
+        imgArea.appendChild(img);
       }
       // Guardar el nombre de la imagen anterior en un campo oculto
       const imgAnteriorInput = document.querySelector('#img_anterior');
