@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     totales();
     cargarGraficoAsistenciasSemanales();
-    cargarGraficoCanalChimbote(); 
-    cargarGraficoCanalNvChimbote(); 
+    cargarGraficoCanalChimbote();
+    cargarGraficoCanalNvChimbote();
 
     document.getElementById('sedeSelect').addEventListener('change', function () {
         cargarGraficoAsistenciasSemanales();
@@ -27,7 +27,7 @@ function totales() {
 function cargarGraficoAsistenciasSemanales() {
     var sede = document.getElementById('sedeSelect').value;
     console.log(sede);
-    
+
     axios.get(ruta + 'controllers/adminController.php?option=weekAsistencias&sede=' + sede)
         .then(function (response) {
             const info = response.data;
@@ -56,7 +56,7 @@ function crearGraficoAsistenciasSemanales(data) {
         },
         dataLabels: {
             enabled: true,
-            formatter: function(val) {
+            formatter: function (val) {
                 return val.toFixed(0);
             },
             offsetY: -5,
@@ -118,7 +118,7 @@ function crearGraficoCanalChimbote(data) {
         dataLabels: {
             enabled: true,
             formatter: function (val, opts) {
-                return val.toFixed(0)+ '%';
+                return val.toFixed(0) + '%';
             }
         },
         legend: {
@@ -181,7 +181,7 @@ function crearGraficoCanalNvChimbote(data) {
         dataLabels: {
             enabled: true,
             formatter: function (val, opts) {
-                return val.toFixed(0)+ '%';
+                return val.toFixed(0) + '%';
             }
         },
         legend: {
@@ -208,3 +208,26 @@ function crearGraficoCanalNvChimbote(data) {
     var chart = new ApexCharts(document.querySelector("#chart-container-NvChimbote"), options);
     chart.render();
 }
+
+// Acceso rapido a las vista desde los cards
+const usuariosCard = document.getElementById('usuariosCard');
+const estudiantesCard = document.getElementById('estudiantesCard');
+const asistenciasCard = document.getElementById('asistenciasCard');
+const canalesCard = document.getElementById('canalesCard');
+
+usuariosCard.addEventListener('click', function () {
+    const paginaUsuarios = 'plantilla.php?pagina=usuarios';
+        window.location.href = paginaUsuarios;
+});
+estudiantesCard.addEventListener('click', function () {
+    const paginaEstudiantes = 'plantilla.php?pagina=estudiantes';
+        window.location.href = paginaEstudiantes;
+});
+asistenciasCard.addEventListener('click', function () {
+    const paginaAsistencias = 'plantilla.php?pagina=reporteAsistencias';
+        window.location.href = paginaAsistencias;
+});
+canalesCard.addEventListener('click', function () {
+    const paginaCanales = 'plantilla.php?pagina=canales';
+        window.location.href = paginaCanales;
+});
