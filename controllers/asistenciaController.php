@@ -39,36 +39,52 @@ switch ($option) {
         $codigo = $_POST['codigo'];
         $accion = $_POST['radio'];
         $consult = $asistencias->getEstudiante($codigo);
+
         if (empty($consult)) {
             $res = array('tipo' => 'error', 'mensaje' => 'EL CODIGO NO EXISTE');
         } else {
             $fecha = date('Y-m-d');
+            $hora = date('Y-m-d H:i:s');
+
             if ($accion == 'entrada') {
-                $entrada = date('Y-m-d H:i:s');
+                // Verificar si ya hay una salida registrada para el estudiante en el día actual
+                $verificarSalida = $asistencias->verificarSalida($fecha, $consult['id']);
+                if (!empty($verificarSalida)) {
+                    $res = array('tipo' => 'error', 'mensaje' => 'YA SE HA REGISTRADO UNA SALIDA, NO SE PUEDE REGISTRAR UNA ENTRADA ADICIONAL');
+                } else {
+                    $verificarEntrada = $asistencias->getAsistencia($fecha, $consult['id']);
+                    if (empty($verificarEntrada)) {
+                        $registrar = $asistencias->registrarEntrada($hora, $fecha, $consult['id']);
+                        if ($registrar) {
+                            $res = array('tipo' => 'success', 'mensaje' => 'INGRESO REGISTRADO');
+                        } else {
+                            $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL REGISTRAR');
+                        }
+                    } else {
+                        $res = array('tipo' => 'error', 'mensaje' => 'ENTRADA YA ESTA REGISTRADA');
+                    }
+                }
+            } elseif ($accion == 'salida') {
                 $verificarEntrada = $asistencias->getAsistencia($fecha, $consult['id']);
                 if (empty($verificarEntrada)) {
-                    $registrar = $asistencias->registrarEntrada($entrada, $fecha, $consult['id']);
+                    // Si no hay una entrada registrada, registra la salida sin entrada previa
+                    $registrar = $asistencias->registrarSalidaSinEntrada($hora, $fecha, $consult['id']);
                     if ($registrar) {
-                        $res = array('tipo' => 'success', 'mensaje' => 'INGRESO REGISTRADO');
+                        $res = array('tipo' => 'success', 'mensaje' => 'SALIDA SIN ENTRADA REGISTRADA');
                     } else {
-                        $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL REGISTRAR');
+                        $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL REGISTRAR LA SALIDA');
                     }
                 } else {
-                    $res = array('tipo' => 'error', 'mensaje' => 'ENTRADA YA ESTA REGISTRADA');
+                    // Si hay una entrada registrada, registra la salida con la entrada correspondiente
+                    $registrar = $asistencias->registrarSalida($hora, $verificarEntrada['id']);
+                    if ($registrar) {
+                        $res = array('tipo' => 'success', 'mensaje' => 'SALIDA REGISTRADA');
+                    } else {
+                        $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL REGISTRAR LA SALIDA');
+                    }
                 }
             } else {
-                $salida = date('Y-m-d H:i:s');
-                $verificarSalida = $asistencias->getAsistencia($fecha, $consult['id']);
-                if (empty($verificarSalida)) {
-                    $registrar = $asistencias->registrarSalida($salida, $fecha, $consult['id']);
-                    if ($registrar) {
-                        $res = array('tipo' => 'success', 'mensaje' => 'INGRESO REGISTRADO');
-                    } else {
-                        $res = array('tipo' => 'error', 'mensaje' => 'ERROR AL REGISTRAR');
-                    }
-                } else {
-                    $res = array('tipo' => 'error', 'mensaje' => 'ENTRADA YA ESTA REGISTRADA');
-                }
+                $res = array('tipo' => 'error', 'mensaje' => 'ACCION INVALIDA');
             }
         }
         echo json_encode($res);
@@ -112,15 +128,50 @@ switch ($option) {
     default:
         # code...
         break;
-    case 'listarInasxfechaActual':
-        // $fechaActual = date('Y-m-d');
-        $data = $asistencias->getInasxfechActual();
-        echo json_encode($data);
-        break;
-    case 'listarInasxRangoFechas':
-        $fechaInicial = $_POST['fechaInicial'];
-        $fechaFinal = $_POST['fechaFinal'];
-        $data = $asistencias->getInasistenciasPorRangoFechas($fechaInicial, $fechaFinal);
-        echo json_encode($data);
-        break;
+    // Dentro de tu controlador
+case 'listarInasxfechaActual':
+    $data = $asistencias->getInasxfechActual();
+    foreach ($data as &$row) {
+        switch ($row['estado_turno']) {
+            case 'Faltó en la mañana':
+                $row['estado_turno'] = '<span class="badge bg-warning">' . $row['estado_turno'] . '</span>';
+                break;
+            case 'Faltó en la tarde':
+                $row['estado_turno'] = '<span class="badge bg-danger">' . $row['estado_turno'] . '</span>';
+                break;
+            case 'Faltó en ambos turnos':
+                $row['estado_turno'] = '<span class="badge bg-secondary">' . $row['estado_turno'] . '</span>';
+                break;
+            default:
+                $row['estado_turno'] = '<span class="badge bg-primary">' . $row['estado_turno'] . '</span>';
+                break;
+        }
+    }
+    echo json_encode($data);
+    break;
+
+    // Dentro de tu controlador
+case 'listarInasxRangoFechas':
+    $fechaInicial = $_POST['fechaInicial'];
+    $fechaFinal = $_POST['fechaFinal'];
+    $data = $asistencias->getInasistenciasPorRangoFechas($fechaInicial, $fechaFinal);
+    foreach ($data as &$row) {
+        switch ($row['estado_turno']) {
+            case 'Faltó en la mañana':
+                $row['estado_turno'] = '<span class="badge bg-warning">' . $row['estado_turno'] . '</span>';
+                break;
+            case 'Faltó en la tarde':
+                $row['estado_turno'] = '<span class="badge bg-danger">' . $row['estado_turno'] . '</span>';
+                break;
+            case 'Faltó en ambos turnos':
+                $row['estado_turno'] = '<span class="badge bg-secondary">' . $row['estado_turno'] . '</span>';
+                break;
+            default:
+                $row['estado_turno'] = '<span class="badge bg-primary">' . $row['estado_turno'] . '</span>';
+                break;
+        }
+    }
+    echo json_encode($data);
+    break;
+
 }

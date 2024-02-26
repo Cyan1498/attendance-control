@@ -32,6 +32,7 @@ const formattedDate = `${year}-${month}-${day}`;
       { data: 'sede' },
       // { data: 'ingreso' },
       { data: 'fecha' },
+      { data: 'estado_turno' },
       // { data: 'salida' },
       // { data: 'accion' }
     ],

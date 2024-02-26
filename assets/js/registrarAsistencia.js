@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
             axios.post(ruta + 'controllers/asistenciaController.php?option=registrarAsistencia', data)
                 .then(function (response) {
                     const info = response.data;
+                    console.log(info);
                     message(info.tipo, info.mensaje);
                     if (info.tipo == 'success') {
                         codigo.value = '';

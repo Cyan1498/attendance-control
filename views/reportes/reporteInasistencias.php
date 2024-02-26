@@ -51,6 +51,7 @@
                         <th scope="col" style="color: #fff;">Aula</th>
                         <th scope="col" style="color: #fff;">Sede</th>
                         <th scope="col" style="color: #fff;">Fecha</th>
+                        <th scope="col" style="color: #fff;">Estado</th>
                         <!-- <th scope="col" style="color: #fff;">Turno Mañana</th> -->
                         <!-- <th scope="col" style="color: #fff;">Turno Tarde</th> -->
                         <!-- <th></th> -->
